@@ -8,12 +8,12 @@ package CP.pannelli;
  *
  * @author pc
  */
-public class pnlScelta extends javax.swing.JPanel {
+public class pnlHome extends javax.swing.JPanel {
 
     /**
      * Creates new form pnlScelta
      */
-    public pnlScelta() {
+    public pnlHome() {
         initComponents();
         
     }

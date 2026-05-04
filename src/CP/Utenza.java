@@ -12,7 +12,7 @@ import eccezioni.PesoNonValidoException;
 
 import java.io.*;
 
-public class Utenza {
+public class Utenza implements java.io.Serializable{
 
     private String nome;  //     GESTIRE TUTTI QUESTI ERRORI TRAMITE ECCEZIONI  
     private String cognome;  // controllo no numeri caratteri strani ecc..
@@ -28,8 +28,8 @@ public class Utenza {
     
     
     private String password;  // min 4 max 8 (carattere grande e un numero)
-    private static final int minPW = 4;
-    private static final int maxPW = 8;
+    private transient static final int minPW = 4;
+    private transient static final int maxPW = 8;
 
     
     //  STABILIRE SE UTILE IL COSTRUTTORE CON TUTTI I PARAMETRI

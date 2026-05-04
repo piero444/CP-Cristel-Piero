@@ -3,7 +3,7 @@ package CP;
 
 import CP.pannelli.pnlRegistrazione;
 import CP.pannelli.pnlRegistrazione1;
-import CP.pannelli.pnlScelta;
+import CP.pannelli.pnlHome;
 import CP.pannelli.pnlSchermata1;
 
 //  IMPORT DELLE ECCEZIONI
@@ -38,14 +38,14 @@ public class Listener implements ActionListener {
     private pnlRegistrazione re;   // 2.1 registazione
     private pnlRegistrazione1 re1;
 
-    private pnlScelta sce;  // HOME 
+    private pnlHome home;  
 
     // DEVO PASSARE QUELLI VERI TRAMITE IL COSTRUTTORE
-    public Listener(pnlSchermata1 schermata1, pnlRegistrazione re, pnlRegistrazione1 re1, pnlScelta sce) {
+    public Listener(pnlSchermata1 schermata1, pnlRegistrazione re, pnlRegistrazione1 re1, pnlHome home) {
         this.schermata1 = schermata1;
         this.re = re;
         this.re1 = re1;
-        this.sce = sce;
+        this.home = home;
     }
 
     // I  JOptionPane  PUOI USARLI PER Conferma (Sì/No):
@@ -124,7 +124,7 @@ public class Listener implements ActionListener {
             System.out.println("Si è riscontrato un problema ");
         }
     }
-
+    
     //  METODI DEI VARI PULSANTI
     private void accedi() {
 
@@ -168,7 +168,7 @@ public class Listener implements ActionListener {
 
                 // PW CORRETTA VADO ALLA HOME
                 schermata1.setVisible(false);
-                sce.setVisible(true);
+                home.setVisible(true);
 
             } else {
                 // Accesso negato PW non valida
@@ -213,17 +213,12 @@ public class Listener implements ActionListener {
             return;
         }
 
-        // SCRIVERE SUI FILE CON IL NOME COGNOME E PW
-        // QUINDI CREARE GIA QUI IL FILE
-        // O PASSARE QUESTI DATI AL ALRO PANNELLO 
-        // TANTO QUI STIAMO FACENDO LA REGISTRAZIONE
-        //  UNA VOLTA FATTO CAMBIO PANNELLO
         // DA REGISTRAZIONE A REGISTRAZIONE1
         re.setVisible(false);
         re1.setVisible(true);
     }
 
-    // PASSAGGIO FINALE ALLA REGISTRAZIONE
+    // PASSAGGIO FINALE DELLA REGISTRAZIONE
     private void registrati() {
         //  CONFERMA REGISTRAZIONE
 

@@ -66,6 +66,11 @@ public class pnlRegistrazione1 extends javax.swing.JPanel {
         spnAltezza.setModel(new javax.swing.SpinnerNumberModel(50, 50, 250, 1));
 
         spnPeso.setModel(new javax.swing.SpinnerNumberModel(20, 20, 200, 1));
+        spnPeso.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                spnPesoStateChanged(evt);
+            }
+        });
 
         jLabel3.setText("Digita la tua taglia abituale:");
 
@@ -211,6 +216,10 @@ public class pnlRegistrazione1 extends javax.swing.JPanel {
     private void cmbTagliaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbTagliaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cmbTagliaActionPerformed
+
+    private void spnPesoStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_spnPesoStateChanged
+        
+    }//GEN-LAST:event_spnPesoStateChanged
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

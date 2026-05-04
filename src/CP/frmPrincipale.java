@@ -3,7 +3,7 @@ package CP;
 
 import CP.pannelli.pnlRegistrazione;
 import CP.pannelli.pnlRegistrazione1;
-import CP.pannelli.pnlScelta;
+import CP.pannelli.pnlHome;
 import CP.pannelli.pnlSchermata1;
 
 public class frmPrincipale extends javax.swing.JFrame {
@@ -15,7 +15,7 @@ public class frmPrincipale extends javax.swing.JFrame {
     private pnlSchermata1 schermata1;
     private pnlRegistrazione re;
     private pnlRegistrazione1 re1;
-    private pnlScelta scelta;
+    private pnlHome scelta;
 
     public frmPrincipale() {
         initComponents();
@@ -31,7 +31,7 @@ public class frmPrincipale extends javax.swing.JFrame {
         schermata1 = new pnlSchermata1();
         re = new pnlRegistrazione();
         re1 = new pnlRegistrazione1();
-        scelta = new pnlScelta();
+        scelta = new pnlHome();
 
         //  PASSO TUTTI I PANNELLI AL ASCOLTATORE
         listener = new Listener(schermata1, re, re1, scelta);

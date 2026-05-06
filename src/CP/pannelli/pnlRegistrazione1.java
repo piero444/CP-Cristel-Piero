@@ -56,16 +56,25 @@ public class pnlRegistrazione1 extends javax.swing.JPanel {
         pnlModellino = new javax.swing.JPanel();
         btnConferma = new javax.swing.JButton();
         spnEtà = new javax.swing.JSpinner();
-        spnPiede = new javax.swing.JSpinner();
+        spnPesoDesiderato = new javax.swing.JSpinner();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         cmbTaglia = new javax.swing.JComboBox<>();
 
+        setMaximumSize(new java.awt.Dimension(1000, 800));
+        setMinimumSize(new java.awt.Dimension(1000, 800));
+
         spnAltezza.setModel(new javax.swing.SpinnerNumberModel(50, 50, 250, 1));
+        spnAltezza.setMaximumSize(new java.awt.Dimension(30, 20));
+        spnAltezza.setMinimumSize(new java.awt.Dimension(30, 20));
+        spnAltezza.setPreferredSize(new java.awt.Dimension(30, 20));
 
         spnPeso.setModel(new javax.swing.SpinnerNumberModel(20, 20, 200, 1));
+        spnPeso.setMaximumSize(new java.awt.Dimension(30, 20));
+        spnPeso.setMinimumSize(new java.awt.Dimension(30, 20));
+        spnPeso.setPreferredSize(new java.awt.Dimension(30, 20));
         spnPeso.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
                 spnPesoStateChanged(evt);
@@ -76,12 +85,15 @@ public class pnlRegistrazione1 extends javax.swing.JPanel {
 
         pnlModellino.setBackground(new java.awt.Color(255, 255, 255));
         pnlModellino.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        pnlModellino.setMaximumSize(new java.awt.Dimension(300, 400));
+        pnlModellino.setMinimumSize(new java.awt.Dimension(300, 400));
+        pnlModellino.setPreferredSize(new java.awt.Dimension(300, 400));
 
         javax.swing.GroupLayout pnlModellinoLayout = new javax.swing.GroupLayout(pnlModellino);
         pnlModellino.setLayout(pnlModellinoLayout);
         pnlModellinoLayout.setHorizontalGroup(
             pnlModellinoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 242, Short.MAX_VALUE)
+            .addGap(0, 496, Short.MAX_VALUE)
         );
         pnlModellinoLayout.setVerticalGroup(
             pnlModellinoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -89,6 +101,9 @@ public class pnlRegistrazione1 extends javax.swing.JPanel {
         );
 
         btnConferma.setText("Conferma registrazione");
+        btnConferma.setMaximumSize(new java.awt.Dimension(170, 40));
+        btnConferma.setMinimumSize(new java.awt.Dimension(170, 40));
+        btnConferma.setPreferredSize(new java.awt.Dimension(170, 40));
         btnConferma.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnConfermaActionPerformed(evt);
@@ -96,8 +111,14 @@ public class pnlRegistrazione1 extends javax.swing.JPanel {
         });
 
         spnEtà.setModel(new javax.swing.SpinnerNumberModel(1, 1, 99, 1));
+        spnEtà.setMaximumSize(new java.awt.Dimension(30, 20));
+        spnEtà.setMinimumSize(new java.awt.Dimension(30, 20));
+        spnEtà.setPreferredSize(new java.awt.Dimension(30, 20));
 
-        spnPiede.setModel(new javax.swing.SpinnerNumberModel(33, 15, 50, 1));
+        spnPesoDesiderato.setModel(new javax.swing.SpinnerNumberModel(33, 20, 200, 1));
+        spnPesoDesiderato.setMaximumSize(new java.awt.Dimension(50, 20));
+        spnPesoDesiderato.setMinimumSize(new java.awt.Dimension(50, 20));
+        spnPesoDesiderato.setPreferredSize(new java.awt.Dimension(50, 20));
 
         jLabel1.setText("Digita la tua età:");
 
@@ -105,10 +126,12 @@ public class pnlRegistrazione1 extends javax.swing.JPanel {
 
         jLabel4.setText("Digita il tuo peso:");
 
-        jLabel5.setText("Digita il tuo numero di piede:");
+        jLabel5.setText("Digita il peso a cui desideri arrivare");
 
         cmbTaglia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "S ", "M", "L", "XL ", "XXL ", " ", " " }));
-        cmbTaglia.setPreferredSize(new java.awt.Dimension(64, 22));
+        cmbTaglia.setMaximumSize(new java.awt.Dimension(50, 20));
+        cmbTaglia.setMinimumSize(new java.awt.Dimension(50, 20));
+        cmbTaglia.setPreferredSize(new java.awt.Dimension(50, 20));
         cmbTaglia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmbTagliaActionPerformed(evt);
@@ -125,15 +148,15 @@ public class pnlRegistrazione1 extends javax.swing.JPanel {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
                             .addGap(28, 28, 28)
-                            .addComponent(btnConferma))
+                            .addComponent(btnConferma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(layout.createSequentialGroup()
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jLabel3)
                                 .addComponent(jLabel5))
-                            .addGap(20, 20, 20)
+                            .addGap(5, 5, 5)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(spnPiede)
-                                .addComponent(cmbTaglia, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                .addComponent(cmbTaglia, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(spnPesoDesiderato, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
@@ -142,22 +165,19 @@ public class pnlRegistrazione1 extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(spnPeso, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
-                            .addComponent(spnEtà)
+                            .addComponent(spnEtà, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
                             .addComponent(spnAltezza, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(pnlModellino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(pnlModellino, javax.swing.GroupLayout.DEFAULT_SIZE, 498, Short.MAX_VALUE)
+                .addGap(234, 234, 234))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(438, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(pnlModellino, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(pnlModellino, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addContainerGap())
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel1)
                             .addComponent(spnEtà, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -172,14 +192,14 @@ public class pnlRegistrazione1 extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel5)
-                            .addComponent(spnPiede, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(spnPesoDesiderato, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3)
                             .addComponent(cmbTaglia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(33, 33, 33)
-                        .addComponent(btnConferma)
-                        .addGap(62, 62, 62))))
+                        .addComponent(btnConferma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(62, 62, 62))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -197,7 +217,7 @@ public class pnlRegistrazione1 extends javax.swing.JPanel {
     }
 
     public int getPiede() {
-        return (int) spnPiede.getValue();
+        return (int) spnPesoDesiderato.getValue();
     }
 
     public Taglia getTaglia() {
@@ -234,6 +254,6 @@ public class pnlRegistrazione1 extends javax.swing.JPanel {
     private javax.swing.JSpinner spnAltezza;
     private javax.swing.JSpinner spnEtà;
     private javax.swing.JSpinner spnPeso;
-    private javax.swing.JSpinner spnPiede;
+    private javax.swing.JSpinner spnPesoDesiderato;
     // End of variables declaration//GEN-END:variables
 }

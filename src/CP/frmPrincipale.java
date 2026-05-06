@@ -6,16 +6,30 @@ import CP.pannelli.pnlRegistrazione1;
 import CP.pannelli.pnlHome;
 import CP.pannelli.pnlSchermata1;
 
+import CP.pannelli.pnlCalcoloFabbisognoCalorico;
+import CP.pannelli.pnlCalcoloIdratazione;
+import CP.pannelli.pnlDietaConsigliata;
+import CP.pannelli.pnlEserciziConsigliati;
+
 public class frmPrincipale extends javax.swing.JFrame {
 
     // DICHIARO LA CLASSE ASCOLTATORE
     private Listener listener;
+
+    // ALTRI ASCOLTATORI PER DOPO LA REGISTRAZIONE
+    private ListenerHome listenerHome;
 
     // DICHIARO TUTTI I PANNELLI 
     private pnlSchermata1 schermata1;
     private pnlRegistrazione re;
     private pnlRegistrazione1 re1;
     private pnlHome scelta;
+
+    // ALTRI PANNELLI PER DOPO LA REGISTRAZIONE
+    private pnlCalcoloFabbisognoCalorico cFB;
+    private pnlCalcoloIdratazione idratazione;
+    private pnlDietaConsigliata dieta;
+    private pnlEserciziConsigliati esercizi;
 
     public frmPrincipale() {
         initComponents();
@@ -59,6 +73,30 @@ public class frmPrincipale extends javax.swing.JFrame {
         re1.setVisible(false);
         scelta.setVisible(false);
 
+        // QUI  AGGIUNGO I PANNELLI E I DUE ASCOLTATORI CHE GESTIRANNO GLI EVENTI FINTA LA REGISTRAZIONE
+        
+        cFB = new pnlCalcoloFabbisognoCalorico();
+        idratazione = new pnlCalcoloIdratazione();
+        dieta = new pnlDietaConsigliata();
+        esercizi = new pnlEserciziConsigliati();
+
+        listenerHome = new ListenerHome(cFB, idratazione, dieta, esercizi);
+        
+
+        add(cFB);
+        add(idratazione);
+        add(dieta);
+        add(esercizi);
+
+        cFB.setBounds(0, 0, 1000, 800);
+        idratazione.setBounds(0, 0, 1000, 800);
+        dieta.setBounds(0, 0, 1000, 800);
+        esercizi.setBounds(0, 0, 1000, 800);
+
+        cFB.setVisible(false);
+        idratazione.setVisible(false);
+        dieta.setVisible(false);
+        esercizi.setVisible(false);
     }
 
     @SuppressWarnings("unchecked")

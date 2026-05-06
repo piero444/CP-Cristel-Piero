@@ -32,13 +32,17 @@ public class Listener implements ActionListener {
 
     private Utenza utente = new Utenza();
 
+    // ATTRIBUTI PER SCEGLIERE IL MODELLINO
+    private int x = 2;
+    private int y = 2;
+    
     // CREO I PANNELLI PER POTER PRENDERE I DATI 
     private pnlSchermata1 schermata1; // 1
 
     private pnlRegistrazione re;   // 2.1 registazione
     private pnlRegistrazione1 re1;
 
-    private pnlHome home;  
+    private pnlHome home;
 
     // DEVO PASSARE QUELLI VERI TRAMITE IL COSTRUTTORE
     public Listener(pnlSchermata1 schermata1, pnlRegistrazione re, pnlRegistrazione1 re1, pnlHome home) {
@@ -85,11 +89,10 @@ public class Listener implements ActionListener {
         //METTO IM MINUSCOLO IL NOME E COGNOME PER CONVENZIONE
         //utente.setNome(utente.getNome().toLowerCase());
         //utente.setCognome(utente.getCognome().toLowerCase());
-        
+
         // PERO ORA NON SERVE PERCHè LO FACCIO GIà QUANDO CNTROLLO L'ESISTENZA
-        
         try {
-            FileInputStream f = new FileInputStream("src/data/utenti/" +utente.getNome() + utente.getCognome() + ".txt");
+            FileInputStream f = new FileInputStream("src/data/utenti/" + utente.getNome() + utente.getCognome() + ".txt");
             ObjectInputStream fIN = new ObjectInputStream(f);
 
             this.utente = (Utenza) fIN.readObject();
@@ -107,7 +110,7 @@ public class Listener implements ActionListener {
         //METTO IM MINUSCOLO IL NOME E COGNOME PER CONVENZIONE
         utente.setNome(utente.getNome().toLowerCase());
         utente.setCognome(utente.getCognome().toLowerCase());
-        
+
         try {
             FileOutputStream f = new FileOutputStream("src/data/utenti/" + utente.getNome() + utente.getCognome() + ".txt");
             ObjectOutputStream fOUT = new ObjectOutputStream(f);
@@ -124,8 +127,127 @@ public class Listener implements ActionListener {
             System.out.println("Si è riscontrato un problema ");
         }
     }
+
+    // METODI PER IL MODELLINO
+    
+    
+    
     
     //  METODI DEI VARI PULSANTI
+    private void peso() {
+        
+        utente.setPeso(re1.getPeso());
+        utente.setAltezza(re1.getAltezza());
+        try
+        {
+            utente.controllaPeso();
+            utente.controllaAltezza();
+        }
+        catch(PesoNonValidoException e)
+        {
+            // JOPTIONPANE
+            return;
+        }
+        catch(AltezzaNonValidaException ee)
+        {
+            // JOPTIONPANE
+            return;
+        }
+        
+        if (utente.isSesso()) {
+            scambiaModellinoF(utente.getPeso(), utente.getAltezza());
+        } else {
+            scambiaModellinoM(utente.getPeso(), utente.getAltezza());
+        }
+    }
+
+    private void altezza() {
+
+        utente.setPeso(re1.getPeso());
+        utente.setAltezza(re1.getAltezza());
+        try
+        {
+            utente.controllaPeso();
+            utente.controllaAltezza();
+        }
+        catch(PesoNonValidoException e)
+        {
+            // JOPTIONPANE
+            return;
+        }
+        catch(AltezzaNonValidaException ee)
+        {
+            // JOPTIONPANE
+            return;
+        }
+        
+        if (utente.isSesso()) {
+            scambiaModellinoF(utente.getPeso(), utente.getAltezza());
+        } else {
+            scambiaModellinoM(utente.getPeso(), utente.getAltezza());
+        }
+    }
+
+    
+    
+    private void scambiaModellinoM(int peso, int altezza) {
+        calcolaMAltezza(altezzaP);
+        calcolaMPeso(pesoP);
+        // CAMBIA IMMAGINE CON MASCHIO X - Y
+
+    }
+
+    private void scambiaModellinoF(int peso, int altezza) {
+        calcolaFAltezza(altezzaP);
+        calcolaFPeso(pesoP);
+
+        // CAMBIA IMMAGINE CON FEMMINA X - Y
+    }
+
+    // METODI PER CALCOLARE L'IMMAGINE GIUSTA DALLA MATRICE 3X3
+    //  4 METODI 2 PER L'UOMO 2 PER LA DONNA
+    private void calcolaMPeso(int peso) {
+        if (peso < 60) {
+            x = 1;
+        } else if (peso <= 80) {
+            x = 2;
+        } else {
+            x = 3;
+        }
+
+    }
+
+    private void calcolaMAltezza(int altezza) {
+        if (altezza < 150) {
+            y = 1;
+        } else if (altezza <= 175) {
+            y = 2;
+        } else {
+            y = 3;
+        }
+    }
+
+    private void calcolaFPeso(int peso) {
+        if (peso < 50) {
+            x = 1;
+        } else if (peso <= 70) {
+            x = 2;
+        } else {
+            x = 3;
+        }
+
+    }
+
+    private void calcolaFAltezza(int altezza) {
+        if (altezza < 110) {
+            y = 1;
+        } else if (altezza <= 165) {
+            y = 2;
+        } else {
+            y = 3;
+        }
+    }
+    
     private void accedi() {
 
         // PRENDO I DATI
@@ -254,7 +376,6 @@ public class Listener implements ActionListener {
         }
 
         //  UNA VOLTA SALVATE LE CREDENZIALI SI CAMBIA PANNELLO
-        
         scriviUtente();
 
         // ANDARE ALLA HOME O Schermata1 

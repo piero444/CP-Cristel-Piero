@@ -86,6 +86,9 @@ public class pnlHome extends javax.swing.JPanel {
         );
 
         jTextField2.setText("sei sottopeso,sei sovrappeso,la dimensione della tua vita è,dei tuoi fianchi,bmi,larghezza spalle");
+        jTextField2.setMaximumSize(new java.awt.Dimension(400, 200));
+        jTextField2.setMinimumSize(new java.awt.Dimension(400, 200));
+        jTextField2.setPreferredSize(new java.awt.Dimension(400, 200));
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField2ActionPerformed(evt);

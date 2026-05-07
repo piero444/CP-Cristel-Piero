@@ -23,7 +23,7 @@ public class frmPrincipale extends javax.swing.JFrame {
     private pnlSchermata1 schermata1;
     private pnlRegistrazione re;
     private pnlRegistrazione1 re1;
-    private pnlHome scelta;
+    private pnlHome home;
 
     // ALTRI PANNELLI PER DOPO LA REGISTRAZIONE
     private pnlCalcoloFabbisognoCalorico cFB;
@@ -45,10 +45,10 @@ public class frmPrincipale extends javax.swing.JFrame {
         schermata1 = new pnlSchermata1();
         re = new pnlRegistrazione();
         re1 = new pnlRegistrazione1();
-        scelta = new pnlHome();
+        home = new pnlHome();
 
         //  PASSO TUTTI I PANNELLI AL ASCOLTATORE
-        listener = new Listener(schermata1, re, re1, scelta);
+        listener = new Listener(schermata1, re, re1, home);
 
         // PASSO TRAMITE IL METODO SET L'ASCOLTATORE
         re.setListener(listener);
@@ -59,19 +59,19 @@ public class frmPrincipale extends javax.swing.JFrame {
         add(schermata1);
         add(re);
         add(re1);
-        add(scelta);
+        add(home);
 
         // SETTO LA POSIZIONE E LA DIMENSIONE DEI PANNELLI
         schermata1.setBounds(0, 0, 1000, 800);
         re.setBounds(0, 0, 1000, 800);
         re1.setBounds(0, 0, 1000, 800);
-        scelta.setBounds(0, 0, 1000, 800);
+        home.setBounds(0, 0, 1000, 800);
 
         // SETTO LE VISIBLITà PER FARE IN MODO CHE ALL'INIZIO SI VEDA SOLO SCHERMATA1
         schermata1.setVisible(true);
         re.setVisible(false);
         re1.setVisible(false);
-        scelta.setVisible(false);
+        home.setVisible(false);
 
         // QUI  AGGIUNGO I PANNELLI E I DUE ASCOLTATORI CHE GESTIRANNO GLI EVENTI FINTA LA REGISTRAZIONE
         
@@ -80,8 +80,13 @@ public class frmPrincipale extends javax.swing.JFrame {
         dieta = new pnlDietaConsigliata();
         esercizi = new pnlEserciziConsigliati();
 
-        listenerHome = new ListenerHome(cFB, idratazione, dieta, esercizi);
+        listenerHome = new ListenerHome(cFB, idratazione, dieta, esercizi,home);
         
+        home.setListener(listenerHome);
+        cFB.setListener(listenerHome);
+        idratazione.setListener(listenerHome);
+        dieta.setListener(listenerHome);
+        esercizi.setListener(listenerHome);
 
         add(cFB);
         add(idratazione);

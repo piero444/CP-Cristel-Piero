@@ -53,7 +53,7 @@ public class Utenza implements java.io.Serializable{
         
 
     public boolean validazionePW() throws PasswordNonValidaException {
-        if (password.length() > minPW && password.length() < maxPW) {
+        if (password.length() >= minPW && password.length() <= maxPW) {
             // DIMENSIONE VALIDA
             int t = 0;    // VARIABILE CONTROLLO PRESENZA DI ALMENO UN CARATTERE MAIUSCOLO
             int t1 = 0;

@@ -92,15 +92,15 @@ public class Listener implements ActionListener {
 
         // PERO ORA NON SERVE PERCHè LO FACCIO GIà QUANDO CNTROLLO L'ESISTENZA
         try {
-            FileInputStream f = new FileInputStream("src/data/utenti/" + utente.getNome() + utente.getCognome() + ".txt");
+            FileInputStream f = new FileInputStream("src/data/utenti/" + utente.getNome() + utente.getCognome() + ".dat");
             ObjectInputStream fIN = new ObjectInputStream(f);
 
             this.utente = (Utenza) fIN.readObject();
 
         } catch (IOException e) {
-            // JoptionPane
+             JOptionPane.showMessageDialog(null, "Errore di I/O del file", "Errore", JOptionPane.ERROR_MESSAGE);
         } catch (ClassNotFoundException ex) {
-
+             JOptionPane.showMessageDialog(null, "Errore classe non trovata", "Errore", JOptionPane.ERROR_MESSAGE);
         }
 
     }
@@ -112,7 +112,7 @@ public class Listener implements ActionListener {
         utente.setCognome(utente.getCognome().toLowerCase());
 
         try {
-            FileOutputStream f = new FileOutputStream("src/data/utenti/" + utente.getNome() + utente.getCognome() + ".txt");
+            FileOutputStream f = new FileOutputStream("src/data/utenti/" + utente.getNome() + utente.getCognome() + ".dat");
             ObjectOutputStream fOUT = new ObjectOutputStream(f);
 
             fOUT.writeObject(utente);
@@ -121,133 +121,15 @@ public class Listener implements ActionListener {
             fOUT.close();
         } catch (IOException e)// INPUT / OUTPUT
         {
-            System.out.println("Errore di input output del file. ");
+            JOptionPane.showMessageDialog(null, "Errore di I/O del file", "Errore", JOptionPane.ERROR_MESSAGE);
         } catch (Exception e)// ECCEZIONE GENERALE
         {
-            System.out.println("Si è riscontrato un problema ");
+            JOptionPane.showMessageDialog(null, "C'è un eccezione", "Errore", JOptionPane.ERROR_MESSAGE);
         }
     }
 
-    // METODI PER IL MODELLINO
-    
-    
-    
     
     //  METODI DEI VARI PULSANTI
-    private void peso() {
-        
-        utente.setPeso(re1.getPeso());
-        utente.setAltezza(re1.getAltezza());
-        try
-        {
-            utente.controllaPeso();
-            utente.controllaAltezza();
-        }
-        catch(PesoNonValidoException e)
-        {
-            // JOPTIONPANE
-            return;
-        }
-        catch(AltezzaNonValidaException ee)
-        {
-            // JOPTIONPANE
-            return;
-        }
-        
-        if (utente.isSesso()) {
-            scambiaModellinoF(utente.getPeso(), utente.getAltezza());
-        } else {
-            scambiaModellinoM(utente.getPeso(), utente.getAltezza());
-        }
-    }
-
-    private void altezza() {
-
-        utente.setPeso(re1.getPeso());
-        utente.setAltezza(re1.getAltezza());
-        try
-        {
-            utente.controllaPeso();
-            utente.controllaAltezza();
-        }
-        catch(PesoNonValidoException e)
-        {
-            // JOPTIONPANE
-            return;
-        }
-        catch(AltezzaNonValidaException ee)
-        {
-            // JOPTIONPANE
-            return;
-        }
-        
-        if (utente.isSesso()) {
-            scambiaModellinoF(utente.getPeso(), utente.getAltezza());
-        } else {
-            scambiaModellinoM(utente.getPeso(), utente.getAltezza());
-        }
-    }
-
-    
-    
-    private void scambiaModellinoM(int peso, int altezza) {
-        calcolaMAltezza(altezzaP);
-        calcolaMPeso(pesoP);
-        // CAMBIA IMMAGINE CON MASCHIO X - Y
-
-    }
-
-    private void scambiaModellinoF(int peso, int altezza) {
-        calcolaFAltezza(altezzaP);
-        calcolaFPeso(pesoP);
-
-        // CAMBIA IMMAGINE CON FEMMINA X - Y
-    }
-
-    // METODI PER CALCOLARE L'IMMAGINE GIUSTA DALLA MATRICE 3X3
-    //  4 METODI 2 PER L'UOMO 2 PER LA DONNA
-    private void calcolaMPeso(int peso) {
-        if (peso < 60) {
-            x = 1;
-        } else if (peso <= 80) {
-            x = 2;
-        } else {
-            x = 3;
-        }
-
-    }
-
-    private void calcolaMAltezza(int altezza) {
-        if (altezza < 150) {
-            y = 1;
-        } else if (altezza <= 175) {
-            y = 2;
-        } else {
-            y = 3;
-        }
-    }
-
-    private void calcolaFPeso(int peso) {
-        if (peso < 50) {
-            x = 1;
-        } else if (peso <= 70) {
-            x = 2;
-        } else {
-            x = 3;
-        }
-
-    }
-
-    private void calcolaFAltezza(int altezza) {
-        if (altezza < 110) {
-            y = 1;
-        } else if (altezza <= 165) {
-            y = 2;
-        } else {
-            y = 3;
-        }
-    }
-    
     private void accedi() {
 
         // PRENDO I DATI
@@ -278,7 +160,7 @@ public class Listener implements ActionListener {
         utente.setCognome(utente.getCognome().toLowerCase());
 
         //  VALIDITà UTENZA
-        File f = new File("src/data/utenti/" + utente.getNome() + utente.getCognome() + ".txt");
+        File f = new File("src/data/utenti/" + utente.getNome() + utente.getCognome() + ".dat");
 
         String pw = utente.getPassword();
         if (f.exists()) {  //  L'UTENTE ESISTE
@@ -293,10 +175,10 @@ public class Listener implements ActionListener {
                 home.setVisible(true);
 
             } else {
-                // Accesso negato PW non valida
+                JOptionPane.showMessageDialog(null, "Accesso negato password errata", "Errore", JOptionPane.ERROR_MESSAGE);
             }
         } else {// File non trovato
-            // eccezione e joptionpane
+            JOptionPane.showMessageDialog(null, "Accesso negato credenziali inesistenti", "Errore", JOptionPane.ERROR_MESSAGE);
         }
     }
 

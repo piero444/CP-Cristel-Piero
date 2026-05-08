@@ -1,14 +1,8 @@
 package CP;
 
-import eccezioni.AltezzaNonValidaException;
-import eccezioni.CirconferenzaVitaNonValidaException;
 import eccezioni.CognomeNonValidoException;
-import eccezioni.EtaNonValidaException;
-import eccezioni.LarghezzaSpalleNonValidaException;
 import eccezioni.NomeNonValidoException;
-import eccezioni.TagliaNonValidaException;
 import eccezioni.PasswordNonValidaException;
-import eccezioni.PesoNonValidoException;
 
 import java.io.*;
 
@@ -18,11 +12,11 @@ public class Utenza implements java.io.Serializable{
     private String cognome;  // controllo no numeri caratteri strani ecc..
     private int eta;   // da 0 a 99
     private int altezza;  // da 0 a 250
-    private int peso;    // da 0 a 300
+    private int peso;    // da 0 a 200
     private Taglia tagliaAbituale;  //  S M L XL XXL
     private boolean sesso; // M - 0 F - 1  Bonus (Frigorifero)
-    private double circonferenzaVita;   // da 0 a 120
-    private double lunghezzaSpalle;  // da 0 a 180
+    private int pesoDesiderato;//peso a cui si desidera arrivare 
+ 
 
     // NUOVO ATTRIBUTO PER AUMENTO O PERDITA PESO
     
@@ -30,23 +24,6 @@ public class Utenza implements java.io.Serializable{
     private String password;  // min 4 max 8 (carattere grande e un numero)
     private transient static final int minPW = 4;
     private transient static final int maxPW = 8;
-
-    
-    //  STABILIRE SE UTILE IL COSTRUTTORE CON TUTTI I PARAMETRI
-    public Utenza(String nome, String cognome, int eta, int altezza, int peso, Taglia tagliaAbituale, boolean sesso, double circonferenzaVita, double lunghezzaSpalle, String password)
-    {
-        this.nome = nome;
-        this.cognome = cognome;
-        this.eta = eta;
-        this.altezza = altezza;
-        this.peso = peso;
-        this.tagliaAbituale = tagliaAbituale;
-        this.sesso = sesso;
-        this.circonferenzaVita = circonferenzaVita;
-        this.lunghezzaSpalle = lunghezzaSpalle;
-        this.password = password;
-        
-    }
 
     Utenza() {
     }
@@ -125,38 +102,6 @@ public class Utenza implements java.io.Serializable{
         }
     }
 
-    //altezza da 0 a 250
-    public void controllaAltezza() throws AltezzaNonValidaException {
-        if (altezza < 0 || altezza > 250) {
-            throw new AltezzaNonValidaException();
-        }
-    }
-    
-    public void controllaPeso() throws PesoNonValidoException {
-        if (peso < 0 || peso > 250) {
-            throw new PesoNonValidoException();
-        }
-    }
-
-    // da 0 a 120
-    public static void controllaCirconferenza(int circonferenza) throws CirconferenzaVitaNonValidaException {
-
-    }
-
-    // da 0 a 99
-    public void controllaEta() throws EtaNonValidaException {
-
-    }
-
-    // da 0 a 120
-    public void controllaLarghezzaS() throws LarghezzaSpalleNonValidaException {
-
-    }
-
-    public void controllaTaglia() throws TagliaNonValidaException {
-
-    }
-
     //  METODI GET E SET
     public String getNome() {
         return nome;
@@ -173,6 +118,15 @@ public class Utenza implements java.io.Serializable{
     public void setCognome(String cognome) {
         this.cognome = cognome;
     }
+
+    public int getPesoDesiderato() {
+        return pesoDesiderato;
+    }
+
+    public void setPesoDesiderato(int pesoDesiderato) {
+        this.pesoDesiderato = pesoDesiderato;
+    }
+    
 
     public int getEta() {
         return eta;
@@ -214,22 +168,6 @@ public class Utenza implements java.io.Serializable{
         this.sesso = sesso;
     }
 
-    public double getCirconferenzaVita() {
-        return circonferenzaVita;
-    }
-
-    public void setCirconferenzaVita(double circonferenzaVita) {
-        this.circonferenzaVita = circonferenzaVita;
-    }
-
-    public double getLunghezzaSpalle() {
-        return lunghezzaSpalle;
-    }
-
-    public void setLunghezzaSpalle(double lunghezzaSpalle) {
-        this.lunghezzaSpalle = lunghezzaSpalle;
-    }
-
     public String getPassword() {
         return password;
     }
@@ -237,6 +175,4 @@ public class Utenza implements java.io.Serializable{
     public void setPassword(String password) {
         this.password = password;
     }
-
-    
 }

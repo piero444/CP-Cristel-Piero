@@ -10,11 +10,14 @@ import javax.swing.event.ChangeEvent;
 public class pnlRegistrazione1 extends javax.swing.JPanel {
 
     private Listener listener;
-
+    private boolean sesso;
     public void setListener(Listener listener) {
         this.listener = listener;
     }
-
+    public void getSesso(boolean sesso)
+    {
+        this.sesso=sesso;
+    }
     public pnlRegistrazione1() {
         initComponents();
         //  AGGIUNGERE I PANNELLI DEL MODELLINNO METTERE VISIBILE SOLO 1 DI DEFOUTL 
@@ -254,7 +257,7 @@ public class pnlRegistrazione1 extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
 
     // CLASSE ASCOLTATORE PER IL MODELLINO
-    /*private class AscoltatoreSpinner implements ChangeListener {
+    private class AscoltatoreSpinner implements ChangeListener {
 
         private int x = 2;
         private int y = 2;
@@ -299,6 +302,23 @@ public class pnlRegistrazione1 extends javax.swing.JPanel {
             calcolaFPeso(peso);
             calcolaFAltezza(altezza);
             
+            // DISPOSIZIONE PESO ALTEZZA
+            if(x <3 && y==3) // magri
+            {
+                
+            }
+            else // grasso
+            {
+                
+            }
+            if(x==3 && y<3) // grassi
+            {
+                
+            }
+            else // magro
+            {
+                
+            }
             // CAMBIA MODELLINO FEMMINILE
             // USANDO LA VISIBILITà
             
@@ -309,10 +329,11 @@ public class pnlRegistrazione1 extends javax.swing.JPanel {
         private void calcolaMPeso(int peso) {
             if (peso < 60) {
                 x = 1;
-            } else if (peso <= 80) {
+            } else if(peso <=80){
                 x = 2;
-            } else {
-                x = 3;
+            }
+            else{
+                x=3;
             }
 
         }
@@ -330,10 +351,10 @@ public class pnlRegistrazione1 extends javax.swing.JPanel {
         private void calcolaFPeso(int peso) {
             if (peso < 50) {
                 x = 1;
-            } else if (peso <= 70) {
+            } else if(peso <=70){
                 x = 2;
-            } else {
-                x = 3;
+            }else{
+                x=3;
             }
 
         }
@@ -348,6 +369,6 @@ public class pnlRegistrazione1 extends javax.swing.JPanel {
             }
         }
 
-    }*/
+    }
 
 }

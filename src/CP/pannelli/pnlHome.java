@@ -3,28 +3,27 @@ package CP.pannelli;
 import CP.ListenerHome;
 
 public class pnlHome extends javax.swing.JPanel {
+
     //PREPARO L'ASCOLTATORE
     private ListenerHome listenerHome;
 
     public void setListener(ListenerHome listenerHome) {
         this.listenerHome = listenerHome;
     }
-    
+
     // impostare quella di defoult
-    String scelta;
+    String scelta = "Esercizi consigliati";
 
     public pnlHome() {
         initComponents();
 
     }
-    
-    // METODE GET PER L'ASCOLTATORE
 
+    // METODE GET PER L'ASCOLTATORE
     public String getScelta() {
         return scelta;
     }
-    
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {

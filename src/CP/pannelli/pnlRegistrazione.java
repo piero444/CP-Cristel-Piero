@@ -4,10 +4,6 @@ import CP.Listener;
 import CP.Utenza;
 
 
-import eccezioni.CognomeNonValidoException;
-import eccezioni.EtaNonValidaException;
-import eccezioni.NomeNonValidoException;
-import eccezioni.PasswordNonValidaException;
 
 public class pnlRegistrazione extends javax.swing.JPanel {
 

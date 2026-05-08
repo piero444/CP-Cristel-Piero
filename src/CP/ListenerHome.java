@@ -60,7 +60,7 @@ public class ListenerHome implements ActionListener {
             break;
             case "Salva i miei progressi e il mio modellino": {
                 //  CAPIRE A CHE PANNELLO MANDARE 
-                scelta= home.getName();
+                scelta= home.getScelta();
                 switch(scelta)
                 {
                     case"Esercizi consigliati":

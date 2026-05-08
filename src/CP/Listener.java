@@ -8,15 +8,9 @@ import CP.pannelli.pnlSchermata1;
 
 //  IMPORT DELLE ECCEZIONI
 // PER ORA LE HO MESSE TUTTE;
-import eccezioni.AltezzaNonValidaException;
-import eccezioni.CirconferenzaVitaNonValidaException;
 import eccezioni.CognomeNonValidoException;
-import eccezioni.EtaNonValidaException;
-import eccezioni.LarghezzaSpalleNonValidaException;
 import eccezioni.NomeNonValidoException;
-import eccezioni.TagliaNonValidaException;
 import eccezioni.PasswordNonValidaException;
-import eccezioni.PesoNonValidoException;
 
 // IMPORT LIBRERIE PER IMPLEMENTARE ActionListener
 import java.awt.event.ActionListener;
@@ -198,16 +192,12 @@ public class Listener implements ActionListener {
             utente.validazionePW();
             utente.controllaNome();
             utente.controllaCognome();
-            utente.controllaEta();
 
             // I METDI LANCIANO ECCEZIONI 
         } catch (PasswordNonValidaException ex) {
 
             //   metterlo centrato                                         
             JOptionPane.showMessageDialog(null, "Password non valida", "Errore", JOptionPane.ERROR_MESSAGE);
-            return;
-        } catch (EtaNonValidaException ex) {
-            JOptionPane.showMessageDialog(null, "Età non valida", "Errore", JOptionPane.ERROR_MESSAGE);
             return;
         } catch (CognomeNonValidoException ex) {
             JOptionPane.showMessageDialog(null, "Cognome non valido", "Errore", JOptionPane.ERROR_MESSAGE);
@@ -232,22 +222,7 @@ public class Listener implements ActionListener {
         utente.setPeso(re1.getPeso());
         utente.setTagliaAbituale(re1.getTaglia());
 
-        // CONTROLLARE VALIDITà DI TUTTI I DATI
-        try {
-            utente.controllaEta();
-            utente.controllaAltezza();
-            utente.controllaPeso();
-            utente.controllaTaglia();
-
-        } catch (EtaNonValidaException ex) {
-            JOptionPane.showMessageDialog(null, "Età non valida", "Errore", JOptionPane.ERROR_MESSAGE);
-        } catch (AltezzaNonValidaException ex) {
-            JOptionPane.showMessageDialog(null, "Altezza non valida", "Errore", JOptionPane.ERROR_MESSAGE);
-        } catch (PesoNonValidoException ex) {
-            JOptionPane.showMessageDialog(null, "Peso non valido", "Errore", JOptionPane.ERROR_MESSAGE);
-        } catch (TagliaNonValidaException ex) {
-            JOptionPane.showMessageDialog(null, "Taglia non valida", "Errore", JOptionPane.ERROR_MESSAGE);
-        }
+        
 
         // SCRIVERE SUI FILE CON IL NOME COGNOME E PW
         if (utente.getNome() == null) //  CONTROLLO CHE HO IL NOME COGNOME E PW

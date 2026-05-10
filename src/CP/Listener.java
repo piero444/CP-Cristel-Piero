@@ -159,7 +159,7 @@ public class Listener implements ActionListener {
         String pw = utente.getPassword();
         if (f.exists()) {  //  L'UTENTE ESISTE
 
-            leggiUtente(); // 
+            leggiUtente(); 
 
             if (pw.equals(utente.getPassword())) {
                 // Accesso consentito

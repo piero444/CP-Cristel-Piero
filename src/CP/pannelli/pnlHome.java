@@ -70,7 +70,7 @@ public class pnlHome extends javax.swing.JPanel {
         jLabel2.setMinimumSize(new java.awt.Dimension(250, 30));
         jLabel2.setPreferredSize(new java.awt.Dimension(250, 30));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Esercizi consigliati ", "Calcolatore fabbisogno calorico ", "Calcolatore idratazione giornaliera ", "Dieta consigliata ", " " }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Esercizi consigliati", "Calcolatore fabbisogno calorico", "Calcolatore idratazione giornaliera", "Dieta consigliata" }));
         jComboBox1.setFocusCycleRoot(true);
         jComboBox1.setMaximumSize(new java.awt.Dimension(250, 30));
         jComboBox1.setMinimumSize(new java.awt.Dimension(250, 30));

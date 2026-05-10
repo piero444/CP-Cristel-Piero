@@ -17,7 +17,7 @@ public class Utenza implements java.io.Serializable{
     private boolean sesso; // M - 0 F - 1  Bonus (Frigorifero)
     private int pesoDesiderato;//peso a cui si desidera arrivare 
  
-
+    
     // NUOVO ATTRIBUTO PER AUMENTO O PERDITA PESO
     
     

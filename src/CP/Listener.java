@@ -18,18 +18,17 @@ import java.awt.event.ActionEvent;
 
 // IMPORT PER FILE
 import java.io.*;
+import javax.swing.*;
 
 //  IMPORT GUI PER JOptionPane
-import javax.swing.JOptionPane;
-
 public class Listener implements ActionListener {
 
     private Utenza utente = new Utenza();
 
-    // ATTRIBUTI PER SCEGLIERE IL MODELLINO
-    private int x = 2;
-    private int y = 2;
-    
+    private ImageIcon immagine;
+    // PRENDO IL FRAME PER IMPOSTARE IL TITOLO
+    private JFrame frame;
+
     // CREO I PANNELLI PER POTER PRENDERE I DATI 
     private pnlSchermata1 schermata1; // 1
 
@@ -39,14 +38,14 @@ public class Listener implements ActionListener {
     private pnlHome home;
 
     // DEVO PASSARE QUELLI VERI TRAMITE IL COSTRUTTORE
-    public Listener(pnlSchermata1 schermata1, pnlRegistrazione re, pnlRegistrazione1 re1, pnlHome home) {
+    public Listener(JFrame frame, pnlSchermata1 schermata1, pnlRegistrazione re, pnlRegistrazione1 re1, pnlHome home) {
+        this.frame = frame;
         this.schermata1 = schermata1;
         this.re = re;
         this.re1 = re1;
         this.home = home;
     }
 
-    // I  JOptionPane  PUOI USARLI PER Conferma (Sì/No):
     //  CATTURA TUTTI GLI EVENTI DEI VARI PANNELLI PER LA REGISTRAZIONE
     public void actionPerformed(ActionEvent e) {
 
@@ -66,11 +65,23 @@ public class Listener implements ActionListener {
                 // DALLA SCHERMATA1 SI PASSA A REGISTRAZIONE
 
                 schermata1.setVisible(false);
+                frame.setTitle("Registrazione");
                 re.setVisible(true);
             }
             break;
             case "Accedi": {
                 this.accedi();
+            }
+            break;
+            case "Torna al accesso": {
+                // COMUNE NASCONDO TUTTI
+                re.setVisible(false);
+                re1.setVisible(false);
+                home.setVisible(false);
+
+                frame.setTitle("Schermata accesso");
+                schermata1.setVisible(true);
+
             }
             break;
         }
@@ -92,9 +103,9 @@ public class Listener implements ActionListener {
             this.utente = (Utenza) fIN.readObject();
 
         } catch (IOException e) {
-             JOptionPane.showMessageDialog(null, "Errore di I/O del file", "Errore", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Errore di I/O del file", "Errore", JOptionPane.ERROR_MESSAGE);
         } catch (ClassNotFoundException ex) {
-             JOptionPane.showMessageDialog(null, "Errore classe non trovata", "Errore", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Errore classe non trovata", "Errore", JOptionPane.ERROR_MESSAGE);
         }
 
     }
@@ -122,7 +133,10 @@ public class Listener implements ActionListener {
         }
     }
 
-    
+    public Utenza getUtente() {
+        return utente;
+    }
+
     //  METODI DEI VARI PULSANTI
     private void accedi() {
 
@@ -134,18 +148,19 @@ public class Listener implements ActionListener {
         // VERIFICO LA VALIDITà
         try {
             //  UTILIZZO I METODI STATICI PER LA VALIDAZIONE
-            utente.validazionePW();
+
             utente.controllaNome();
             utente.controllaCognome();
+            utente.validazionePW();
 
-        } catch (PasswordNonValidaException ex) {
-            JOptionPane.showMessageDialog(null, "Password non valida", "Errore", JOptionPane.ERROR_MESSAGE);
-            return;
         } catch (CognomeNonValidoException ex) {
             JOptionPane.showMessageDialog(null, "Cognome non valido", "Errore", JOptionPane.ERROR_MESSAGE);
             return;
         } catch (NomeNonValidoException ex) {
             JOptionPane.showMessageDialog(null, "Nome non valido", "Errore", JOptionPane.ERROR_MESSAGE);
+            return;
+        } catch (PasswordNonValidaException ex) {
+            JOptionPane.showMessageDialog(null, "Password non valida", "Errore", JOptionPane.ERROR_MESSAGE);
             return;
         }
 
@@ -159,13 +174,22 @@ public class Listener implements ActionListener {
         String pw = utente.getPassword();
         if (f.exists()) {  //  L'UTENTE ESISTE
 
-            leggiUtente(); 
+            leggiUtente();
 
             if (pw.equals(utente.getPassword())) {
                 // Accesso consentito
 
                 // PW CORRETTA VADO ALLA HOME
                 schermata1.setVisible(false);
+                frame.setTitle("Home");
+
+                leggiUtente();
+                if (re1.getSesso()) {
+                    immagine = new ImageIcon(getClass().getResource("/data/ModFemmine/f" + utente.getY() + utente.getX() + ".png"));
+                } else {
+                    immagine = new ImageIcon(getClass().getResource("/data/ModMaschi/m" + utente.getY() + utente.getX() + ".png"));
+                }
+                home.impostaModellino(immagine);
                 home.setVisible(true);
 
             } else {
@@ -183,8 +207,13 @@ public class Listener implements ActionListener {
         // PRENDO I DATI
         utente.setNome(re.getNome());
         utente.setCognome(re.getCognome());
-        utente.setEta(re.getEta());
         utente.setPassword(re.getPassword());
+        if (re.maschioIsSelected()) {
+            utente.setSesso(false); //MASCHIO
+        } else {
+            utente.setSesso(true); // FEMMINA
+        }
+        // prendere il sesso
 
         // CONTROLLARE VALIDITà DI TUTTI I DATI
         try {
@@ -194,19 +223,34 @@ public class Listener implements ActionListener {
             utente.controllaCognome();
 
             // I METDI LANCIANO ECCEZIONI 
-        } catch (PasswordNonValidaException ex) {
-
-            //   metterlo centrato                                         
-            JOptionPane.showMessageDialog(null, "Password non valida", "Errore", JOptionPane.ERROR_MESSAGE);
-            return;
         } catch (CognomeNonValidoException ex) {
             JOptionPane.showMessageDialog(null, "Cognome non valido", "Errore", JOptionPane.ERROR_MESSAGE);
             return;
         } catch (NomeNonValidoException ex) {
             JOptionPane.showMessageDialog(null, "Nome non valido", "Errore", JOptionPane.ERROR_MESSAGE);
             return;
-        }
+        }catch (PasswordNonValidaException ex) {
 
+            //   metterlo centrato                                         
+            JOptionPane.showMessageDialog(null, "Password non valida", "Errore", JOptionPane.ERROR_MESSAGE);
+            return;
+        } 
+
+        // PRIMA DI ANDARE AL ALTRO PANNELLO IMPOSTO IL MODELLINO E GLI SPINNER DI DEFAULT 
+        ImageIcon immagine;
+        if (utente.getSesso()) {
+            immagine = new ImageIcon(getClass().getResource("/data/ModFemmine/f22.png"));
+        } else {
+            immagine = new ImageIcon(getClass().getResource("/data/ModMaschi/m22.png"));
+        }
+        re1.modellinoDefautl(immagine);
+        if (utente.getSesso()) {
+            re1.setAltezza(160);
+            re1.setPeso(60);
+        } else {
+            re1.setAltezza(170);
+            re1.setPeso(70);
+        }
         // DA REGISTRAZIONE A REGISTRAZIONE1
         re.setVisible(false);
         re1.setVisible(true);
@@ -220,9 +264,6 @@ public class Listener implements ActionListener {
         utente.setEta(re1.getEta());
         utente.setAltezza(re1.getAltezza());
         utente.setPeso(re1.getPeso());
-        utente.setTagliaAbituale(re1.getTaglia());
-
-        
 
         // SCRIVERE SUI FILE CON IL NOME COGNOME E PW
         if (utente.getNome() == null) //  CONTROLLO CHE HO IL NOME COGNOME E PW
@@ -240,4 +281,19 @@ public class Listener implements ActionListener {
         schermata1.setVisible(true);
     }
 
+    public boolean getSesso() {
+        return utente.getSesso();
+    }
+
+    public int getAltezza() {
+        return utente.getX();
+    }
+
+    public int getXImmagine() {
+        return utente.getX();
+    }
+
+    public int getYImmagine() {
+        return utente.getY();
+    }
 }

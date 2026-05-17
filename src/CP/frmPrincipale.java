@@ -1,6 +1,5 @@
 package CP;
 //  IMPORTO TUTTI I PANNELLI
-
 import CP.pannelli.pnlRegistrazione;
 import CP.pannelli.pnlRegistrazione1;
 import CP.pannelli.pnlHome;
@@ -8,8 +7,9 @@ import CP.pannelli.pnlSchermata1;
 
 import CP.pannelli.pnlCalcoloFabbisognoCalorico;
 import CP.pannelli.pnlCalcoloIdratazione;
-import CP.pannelli.pnlDietaConsigliata;
+import CP.pannelli.pnlDietaConsigliata1;
 import CP.pannelli.pnlEserciziConsigliati;
+import CP.pannelli.pnlObbiettivo;
 
 public class frmPrincipale extends javax.swing.JFrame {
 
@@ -28,7 +28,8 @@ public class frmPrincipale extends javax.swing.JFrame {
     // ALTRI PANNELLI PER DOPO LA REGISTRAZIONE
     private pnlCalcoloFabbisognoCalorico cFB;
     private pnlCalcoloIdratazione idratazione;
-    private pnlDietaConsigliata dieta;
+    private pnlDietaConsigliata1 dieta;
+    private pnlObbiettivo obbiettivo;
     private pnlEserciziConsigliati esercizi;
 
     public frmPrincipale() {
@@ -40,7 +41,8 @@ public class frmPrincipale extends javax.swing.JFrame {
 
         // IMPOSTO IL LAYOUT A NULL PER PORTE METTERE I PANNELLI LIBERAMENTE
         setLayout(null);
-
+        //BLOCCO LA POSSIBILITA' DI MODIFICARE LE DIMENSIONI DELLA FINESTRA
+        setResizable(false);
         //  COSTRUISCO TUTTI PANNELLI
         schermata1 = new pnlSchermata1();
         re = new pnlRegistrazione();
@@ -48,8 +50,11 @@ public class frmPrincipale extends javax.swing.JFrame {
         home = new pnlHome();
 
         //  PASSO TUTTI I PANNELLI AL ASCOLTATORE
-        listener = new Listener(schermata1, re, re1, home);
+        //      THIS PER PASSARE QUESTO FRAME
+        listener = new Listener(this,schermata1, re, re1, home);
 
+        this.setTitle("Schermata accesso");
+        
         // PASSO TRAMITE IL METODO SET L'ASCOLTATORE
         re.setListener(listener);
         re1.setListener(listener);
@@ -77,30 +82,36 @@ public class frmPrincipale extends javax.swing.JFrame {
         
         cFB = new pnlCalcoloFabbisognoCalorico();
         idratazione = new pnlCalcoloIdratazione();
-        dieta = new pnlDietaConsigliata();
+        dieta = new pnlDietaConsigliata1();
+        obbiettivo=new pnlObbiettivo();
         esercizi = new pnlEserciziConsigliati();
 
-        listenerHome = new ListenerHome(cFB, idratazione, dieta, esercizi,home);
+        listenerHome = new ListenerHome(cFB, idratazione, dieta,obbiettivo, esercizi,home,listener);
         
         home.setListener(listenerHome);
         cFB.setListener(listenerHome);
         idratazione.setListener(listenerHome);
         dieta.setListener(listenerHome);
+        obbiettivo.setListener(listenerHome);
+        obbiettivo.setListener1(listener);
         esercizi.setListener(listenerHome);
 
         add(cFB);
         add(idratazione);
         add(dieta);
+        add(obbiettivo);
         add(esercizi);
 
         cFB.setBounds(0, 0, 1000, 800);
         idratazione.setBounds(0, 0, 1000, 800);
         dieta.setBounds(0, 0, 1000, 800);
+        obbiettivo.setBounds(0, 0, 1000, 800);
         esercizi.setBounds(0, 0, 1000, 800);
 
         cFB.setVisible(false);
         idratazione.setVisible(false);
         dieta.setVisible(false);
+        obbiettivo.setVisible(false);
         esercizi.setVisible(false);
     }
 
@@ -126,6 +137,13 @@ public class frmPrincipale extends javax.swing.JFrame {
 
     public static void main(String args[]) {
 
+        try {
+        com.formdev.flatlaf.FlatLightLaf.setup();
+        javax.swing.UIManager.put( "Component.arc", 12 );
+    } catch (Exception ex) {
+        System.err.println("Errore setup FlatLaf");
+    }
+        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new frmPrincipale().setVisible(true);

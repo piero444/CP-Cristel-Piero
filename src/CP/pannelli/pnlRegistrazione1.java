@@ -2,6 +2,9 @@ package CP.pannelli;
 
 import CP.Listener;
 import CP.Taglia;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+
 import javax.swing.JSpinner;
 
 import javax.swing.event.ChangeListener;
@@ -11,200 +14,36 @@ public class pnlRegistrazione1 extends javax.swing.JPanel {
 
     private Listener listener;
     private boolean sesso;
+    private int x;
+    private int y;
+
     public void setListener(Listener listener) {
         this.listener = listener;
     }
-    public void getSesso(boolean sesso)
-    {
-        this.sesso=sesso;
+
+    public void setSesso(boolean sesso) {
+        this.sesso = sesso;
     }
+
+    public boolean getSesso() {
+        return sesso;
+    }
+
     public pnlRegistrazione1() {
         initComponents();
-        //  AGGIUNGERE I PANNELLI DEL MODELLINNO METTERE VISIBILE SOLO 1 DI DEFOUTL 
-        // RICORDATI DI SETTARE LA POSIZIONE ALLA FINE
-        
-        /*AscoltatoreSpinner ascoltatore = new AscoltatoreSpinner();
-        spnPeso.addChangeListener(ascoltatore);
-        spnAltezza.addChangeListener(ascoltatore);*/
-        btnConferma.setActionCommand("Conferma registrazione");
 
-        // Colore di sfondo del pannello (F7F9F9 della tua palette)
-        this.setBackground(new java.awt.Color(247, 249, 249));
-// Stile del Bottone "Conferma"
-        btnConferma.setBackground(new java.awt.Color(32, 129, 195)); // Blu scuro palette
-        btnConferma.setForeground(java.awt.Color.WHITE); // Scritta bianca
-        btnConferma.setFont(new java.awt.Font("Segoe UI", java.awt.Font.BOLD, 14));
-// Stile del riquadro "Camerino" (pnlModellino)
-        pnlModellino.setBackground(java.awt.Color.WHITE);
-        pnlModellino.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(32, 129, 195), 2));
+        AscoltatoreSpinner a1 = new AscoltatoreSpinner(spnEtà);
+        spnEtà.addChangeListener(a1);
+        spnEtà.addMouseListener(a1);
 
-        // Sfondo del pannello principale (quello che contiene tutto)
-        this.setBackground(new java.awt.Color(247, 249, 249));
-        // Stile per il "Camerino" (il pannello che hai chiamato pnlModellino)
-        pnlModellino.setBackground(java.awt.Color.WHITE);
-        pnlModellino.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(32, 129, 195), 2));
-        // Stile per il bottone di conferma
-        btnConferma.setBackground(new java.awt.Color(32, 129, 195));
-        btnConferma.setForeground(java.awt.Color.WHITE);
-        btnConferma.setFocusPainted(false);
+        AscoltatoreSpinner a2 = new AscoltatoreSpinner(spnAltezza);
+        spnAltezza.addChangeListener(a2);
+        spnAltezza.addMouseListener(a2);
+
+        AscoltatoreSpinner a3 = new AscoltatoreSpinner(spnPeso);
+        spnPeso.addChangeListener(a3);
+        spnPeso.addMouseListener(a3);
     }
-
-    @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
-
-        spnAltezza = new javax.swing.JSpinner();
-        spnPeso = new javax.swing.JSpinner();
-        jLabel3 = new javax.swing.JLabel();
-        pnlModellino = new javax.swing.JPanel();
-        btnConferma = new javax.swing.JButton();
-        spnEtà = new javax.swing.JSpinner();
-        spnPesoDesiderato = new javax.swing.JSpinner();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        cmbTaglia = new javax.swing.JComboBox<>();
-
-        setMaximumSize(new java.awt.Dimension(1000, 800));
-        setMinimumSize(new java.awt.Dimension(1000, 800));
-
-        spnAltezza.setModel(new javax.swing.SpinnerNumberModel(50, 50, 250, 1));
-        spnAltezza.setMaximumSize(new java.awt.Dimension(30, 20));
-        spnAltezza.setMinimumSize(new java.awt.Dimension(30, 20));
-        spnAltezza.setPreferredSize(new java.awt.Dimension(30, 20));
-
-        spnPeso.setModel(new javax.swing.SpinnerNumberModel(20, 20, 200, 1));
-        spnPeso.setMaximumSize(new java.awt.Dimension(30, 20));
-        spnPeso.setMinimumSize(new java.awt.Dimension(30, 20));
-        spnPeso.setPreferredSize(new java.awt.Dimension(30, 20));
-        spnPeso.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                spnPesoStateChanged(evt);
-            }
-        });
-
-        jLabel3.setText("Digita la tua taglia abituale:");
-
-        pnlModellino.setBackground(new java.awt.Color(255, 255, 255));
-        pnlModellino.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        pnlModellino.setMaximumSize(new java.awt.Dimension(300, 400));
-        pnlModellino.setMinimumSize(new java.awt.Dimension(300, 400));
-        pnlModellino.setPreferredSize(new java.awt.Dimension(300, 400));
-
-        javax.swing.GroupLayout pnlModellinoLayout = new javax.swing.GroupLayout(pnlModellino);
-        pnlModellino.setLayout(pnlModellinoLayout);
-        pnlModellinoLayout.setHorizontalGroup(
-            pnlModellinoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 496, Short.MAX_VALUE)
-        );
-        pnlModellinoLayout.setVerticalGroup(
-            pnlModellinoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-
-        btnConferma.setText("Conferma registrazione");
-        btnConferma.setMaximumSize(new java.awt.Dimension(170, 40));
-        btnConferma.setMinimumSize(new java.awt.Dimension(170, 40));
-        btnConferma.setPreferredSize(new java.awt.Dimension(170, 40));
-        btnConferma.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnConfermaActionPerformed(evt);
-            }
-        });
-
-        spnEtà.setModel(new javax.swing.SpinnerNumberModel(1, 1, 99, 1));
-        spnEtà.setMaximumSize(new java.awt.Dimension(30, 20));
-        spnEtà.setMinimumSize(new java.awt.Dimension(30, 20));
-        spnEtà.setPreferredSize(new java.awt.Dimension(30, 20));
-
-        spnPesoDesiderato.setModel(new javax.swing.SpinnerNumberModel(33, 20, 200, 1));
-        spnPesoDesiderato.setMaximumSize(new java.awt.Dimension(50, 20));
-        spnPesoDesiderato.setMinimumSize(new java.awt.Dimension(50, 20));
-        spnPesoDesiderato.setPreferredSize(new java.awt.Dimension(50, 20));
-
-        jLabel1.setText("Digita la tua età:");
-
-        jLabel2.setText("Digita la tua altezza:");
-
-        jLabel4.setText("Digita il tuo peso:");
-
-        jLabel5.setText("Digita il peso a cui desideri arrivare");
-
-        cmbTaglia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "S", "M", "L", "XL", "XXL", "" }));
-        cmbTaglia.setMaximumSize(new java.awt.Dimension(50, 20));
-        cmbTaglia.setMinimumSize(new java.awt.Dimension(50, 20));
-        cmbTaglia.setPreferredSize(new java.awt.Dimension(50, 20));
-        cmbTaglia.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmbTagliaActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(28, 28, 28)
-                            .addComponent(btnConferma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel3)
-                                .addComponent(jLabel5))
-                            .addGap(5, 5, 5)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(cmbTaglia, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(spnPesoDesiderato, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel4))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(spnPeso, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
-                            .addComponent(spnEtà, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-                            .addComponent(spnAltezza, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(pnlModellino, javax.swing.GroupLayout.DEFAULT_SIZE, 498, Short.MAX_VALUE)
-                .addGap(234, 234, 234))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(438, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(pnlModellino, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1)
-                            .addComponent(spnEtà, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(spnAltezza, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4)
-                            .addComponent(spnPeso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel5)
-                            .addComponent(spnPesoDesiderato, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel3)
-                            .addComponent(cmbTaglia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(33, 33, 33)
-                        .addComponent(btnConferma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(62, 62, 62))
-        );
-    }// </editor-fold>//GEN-END:initComponents
 
     //  METDODI GET PER L'ASCOLTATORE
     public int getEta() {
@@ -219,55 +58,257 @@ public class pnlRegistrazione1 extends javax.swing.JPanel {
         return (int) spnPeso.getValue();
     }
 
-    public Taglia getTaglia() {
-
-        String s = (String) cmbTaglia.getSelectedItem();
-        return Taglia.valueOf(s);
+    public void setAltezza(int altezza) {
+        spnAltezza.setValue(altezza);
     }
 
-    private void btnConfermaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfermaActionPerformed
-        //  CONFERMA REGISTRAZIONE
+    public void setPeso(int peso) {
+        spnPeso.setValue(peso);
+    }
 
+    public void modellinoDefautl(ImageIcon immagine) {
+        modellino.setIcon(immagine);
+    }
+
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        jPanel4 = new javax.swing.JPanel();
+        jPanel12 = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
+        spnEtà = new javax.swing.JSpinner();
+        jPanel14 = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
+        spnAltezza = new javax.swing.JSpinner();
+        jPanel13 = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
+        spnPeso = new javax.swing.JSpinner();
+        jPanel3 = new javax.swing.JPanel();
+        jPanel6 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jPanel7 = new javax.swing.JPanel();
+        modellino = new javax.swing.JLabel();
+        jPanel5 = new javax.swing.JPanel();
+        Registrati = new javax.swing.JButton();
+
+        setBackground(new java.awt.Color(92, 209, 255));
+        setMaximumSize(new java.awt.Dimension(1000, 800));
+        setMinimumSize(new java.awt.Dimension(1000, 800));
+        setPreferredSize(new java.awt.Dimension(1000, 800));
+        setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 4, 45));
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setMaximumSize(new java.awt.Dimension(450, 500));
+        jPanel1.setMinimumSize(new java.awt.Dimension(450, 500));
+        jPanel1.setName(""); // NOI18N
+        jPanel1.setOpaque(false);
+        jPanel1.setPreferredSize(new java.awt.Dimension(950, 650));
+        jPanel1.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 0, 0));
+
+        jPanel2.setBackground(new java.awt.Color(191, 230, 249));
+        jPanel2.setBorder(javax.swing.BorderFactory.createEmptyBorder(50, 60, 30, 50));
+        jPanel2.setMaximumSize(new java.awt.Dimension(450, 545));
+        jPanel2.setMinimumSize(new java.awt.Dimension(450, 545));
+        jPanel2.setPreferredSize(new java.awt.Dimension(450, 545));
+        jPanel2.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 5, 50));
+
+        jPanel4.setBackground(new java.awt.Color(255, 255, 102));
+        jPanel4.setToolTipText("avanti");
+        jPanel4.setMaximumSize(new java.awt.Dimension(500, 600));
+        jPanel4.setMinimumSize(new java.awt.Dimension(500, 600));
+        jPanel4.setOpaque(false);
+        jPanel4.setPreferredSize(new java.awt.Dimension(500, 600));
+        jPanel4.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 5, 50));
+
+        jPanel12.setBackground(new java.awt.Color(15, 76, 156));
+        jPanel12.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel12.setForeground(new java.awt.Color(190, 216, 212));
+        jPanel12.setMaximumSize(new java.awt.Dimension(400, 60));
+        jPanel12.setMinimumSize(new java.awt.Dimension(400, 60));
+        jPanel12.setPreferredSize(new java.awt.Dimension(400, 60));
+        jPanel12.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 20, 5));
+
+        jLabel7.setFont(new java.awt.Font("Verdana Pro Cond Light", 0, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("<html>Inserisci la tua <br>età<html>");
+        jLabel7.setMaximumSize(new java.awt.Dimension(130, 50));
+        jLabel7.setMinimumSize(new java.awt.Dimension(130, 50));
+        jLabel7.setPreferredSize(new java.awt.Dimension(130, 50));
+        jPanel12.add(jLabel7);
+
+        spnEtà.setModel(new javax.swing.SpinnerNumberModel(2, null, 99, 1));
+        spnEtà.setMaximumSize(new java.awt.Dimension(70, 30));
+        spnEtà.setMinimumSize(new java.awt.Dimension(70, 30));
+        spnEtà.setPreferredSize(new java.awt.Dimension(70, 30));
+        jPanel12.add(spnEtà);
+
+        jPanel4.add(jPanel12);
+
+        jPanel14.setBackground(new java.awt.Color(15, 76, 156));
+        jPanel14.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel14.setForeground(new java.awt.Color(247, 249, 249));
+        jPanel14.setMaximumSize(new java.awt.Dimension(400, 60));
+        jPanel14.setMinimumSize(new java.awt.Dimension(400, 60));
+        jPanel14.setPreferredSize(new java.awt.Dimension(400, 60));
+        jPanel14.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 20, 5));
+
+        jLabel9.setFont(new java.awt.Font("Verdana Pro Cond Light", 0, 18)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setText("<html>Inserisci la tua <br>altezza<html>");
+        jLabel9.setMaximumSize(new java.awt.Dimension(130, 50));
+        jLabel9.setMinimumSize(new java.awt.Dimension(130, 50));
+        jLabel9.setPreferredSize(new java.awt.Dimension(130, 50));
+        jPanel14.add(jLabel9);
+
+        spnAltezza.setModel(new javax.swing.SpinnerNumberModel(50, 50, 250, 1));
+        spnAltezza.setMaximumSize(new java.awt.Dimension(70, 30));
+        spnAltezza.setMinimumSize(new java.awt.Dimension(70, 30));
+        spnAltezza.setPreferredSize(new java.awt.Dimension(70, 30));
+        jPanel14.add(spnAltezza);
+
+        jPanel4.add(jPanel14);
+
+        jPanel13.setBackground(new java.awt.Color(15, 76, 156));
+        jPanel13.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel13.setMaximumSize(new java.awt.Dimension(400, 60));
+        jPanel13.setMinimumSize(new java.awt.Dimension(400, 60));
+        jPanel13.setPreferredSize(new java.awt.Dimension(400, 60));
+        jPanel13.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 20, 5));
+
+        jLabel8.setFont(new java.awt.Font("Verdana Pro Cond Light", 0, 18)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText("<html>Inserisci il tuo<br> peso<html>");
+        jLabel8.setMaximumSize(new java.awt.Dimension(130, 50));
+        jLabel8.setMinimumSize(new java.awt.Dimension(130, 50));
+        jLabel8.setPreferredSize(new java.awt.Dimension(130, 50));
+        jPanel13.add(jLabel8);
+
+        spnPeso.setModel(new javax.swing.SpinnerNumberModel(20, 20, 300, 1));
+        spnPeso.setMaximumSize(new java.awt.Dimension(70, 30));
+        spnPeso.setMinimumSize(new java.awt.Dimension(70, 30));
+        spnPeso.setPreferredSize(new java.awt.Dimension(70, 30));
+        jPanel13.add(spnPeso);
+
+        jPanel4.add(jPanel13);
+
+        jPanel2.add(jPanel4);
+
+        jPanel1.add(jPanel2);
+
+        jPanel3.setBackground(new java.awt.Color(191, 230, 249));
+        jPanel3.setToolTipText("");
+        jPanel3.setMaximumSize(new java.awt.Dimension(500, 545));
+        jPanel3.setMinimumSize(new java.awt.Dimension(500, 545));
+        jPanel3.setPreferredSize(new java.awt.Dimension(500, 545));
+        jPanel3.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 5, 15));
+
+        jPanel6.setBackground(new java.awt.Color(191, 230, 249));
+        jPanel6.setForeground(new java.awt.Color(15, 76, 156));
+        jPanel6.setMaximumSize(new java.awt.Dimension(260, 45));
+        jPanel6.setMinimumSize(new java.awt.Dimension(260, 45));
+        jPanel6.setPreferredSize(new java.awt.Dimension(260, 45));
+
+        jLabel3.setBackground(new java.awt.Color(190, 216, 212));
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel3.setText("Anteprima modellino");
+        jPanel6.add(jLabel3);
+
+        jPanel3.add(jPanel6);
+
+        jPanel7.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel7.setMaximumSize(new java.awt.Dimension(420, 440));
+        jPanel7.setMinimumSize(new java.awt.Dimension(420, 440));
+        jPanel7.setPreferredSize(new java.awt.Dimension(420, 440));
+        jPanel7.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 10, 30));
+
+        modellino.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        modellino.setMaximumSize(new java.awt.Dimension(200, 385));
+        modellino.setMinimumSize(new java.awt.Dimension(200, 385));
+        modellino.setName(""); // NOI18N
+        modellino.setPreferredSize(new java.awt.Dimension(200, 385));
+        jPanel7.add(modellino);
+
+        jPanel3.add(jPanel7);
+
+        jPanel1.add(jPanel3);
+
+        jPanel5.setBorder(javax.swing.BorderFactory.createEmptyBorder(40, 40, 40, 40));
+        jPanel5.setOpaque(false);
+        jPanel5.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 30, 5));
+
+        Registrati.setBackground(new java.awt.Color(32, 129, 195));
+        Registrati.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        Registrati.setForeground(new java.awt.Color(255, 255, 255));
+        Registrati.setText("Conferma registrazione");
+        Registrati.setToolTipText("");
+        Registrati.setBorderPainted(false);
+        Registrati.setMaximumSize(new java.awt.Dimension(950, 50));
+        Registrati.setMinimumSize(new java.awt.Dimension(950, 50));
+        Registrati.setPreferredSize(new java.awt.Dimension(950, 50));
+        Registrati.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RegistratiActionPerformed(evt);
+            }
+        });
+        jPanel5.add(Registrati);
+
+        jPanel1.add(jPanel5);
+
+        add(jPanel1);
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void RegistratiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistratiActionPerformed
         //   PASSO IL CONTROLLO DEL EVENTO ALLA CLASSE ASCOLTATORE
         listener.actionPerformed(evt);
-    }//GEN-LAST:event_btnConfermaActionPerformed
-
-    private void cmbTagliaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbTagliaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cmbTagliaActionPerformed
-
-    private void spnPesoStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_spnPesoStateChanged
-
-    }//GEN-LAST:event_spnPesoStateChanged
+    }//GEN-LAST:event_RegistratiActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnConferma;
-    private javax.swing.JComboBox<String> cmbTaglia;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JButton Registrati;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JPanel pnlModellino;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel13;
+    private javax.swing.JPanel jPanel14;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JLabel modellino;
     private javax.swing.JSpinner spnAltezza;
     private javax.swing.JSpinner spnEtà;
     private javax.swing.JSpinner spnPeso;
-    private javax.swing.JSpinner spnPesoDesiderato;
     // End of variables declaration//GEN-END:variables
 
     // CLASSE ASCOLTATORE PER IL MODELLINO
-    private class AscoltatoreSpinner implements ChangeListener {
+    private class AscoltatoreSpinner extends java.awt.event.MouseAdapter implements ChangeListener {
 
-        private int x = 2;
-        private int y = 2;
+        private javax.swing.JSpinner spinner;
 
-        private int peso;
-        private int altezza;
+        public AscoltatoreSpinner(javax.swing.JSpinner spinner) {
+            this.spinner = spinner;
+        }
+
+        private ImageIcon immagine;
+
+        private int peso = getPeso();
+        private int altezza = getAltezza();
 
         public void stateChanged(ChangeEvent e) {
             JSpinner spinner = (JSpinner) e.getSource();
-
+            if (listener == null) {
+                return; // PER SICUREZZA
+            }
+            sesso = listener.getSesso();
             if (spinner == spnPeso) {
                 peso = getPeso();
                 if (sesso) {
@@ -289,83 +330,76 @@ public class pnlRegistrazione1 extends javax.swing.JPanel {
             }
         }
 
+        public void mouseClicked(java.awt.event.MouseEvent e) {
+            javax.swing.JSpinner.DefaultEditor editor
+                    = (javax.swing.JSpinner.DefaultEditor) spinner.getEditor();
+            editor.getTextField().setText("");
+        }
+
         // METODI UTILI
         private void scambiaModellinoM(int peso, int altezza) {
 
             calcolaMPeso(peso);
             calcolaMAltezza(altezza);
             // CAMBIA MODELLINO MASCHILE
-            
+
+            immagine = new ImageIcon(getClass().getResource("/data/ModMaschi/m" + y + x + ".png"));
+            modellino.setIcon(immagine);
+
         }
+
         private void scambiaModellinoF(int peso, int altezza) {
 
             calcolaFPeso(peso);
             calcolaFAltezza(altezza);
-            
-            // DISPOSIZIONE PESO ALTEZZA
-            if(x <3 && y==3) // magri
-            {
-                
-            }
-            else // grasso
-            {
-                
-            }
-            if(x==3 && y<3) // grassi
-            {
-                
-            }
-            else // magro
-            {
-                
-            }
+
             // CAMBIA MODELLINO FEMMINILE
-            // USANDO LA VISIBILITà
-            
+            immagine = new ImageIcon(getClass().getResource("/data/ModFemmine/f" + y + x + ".png"));
+            modellino.setIcon(immagine);
+
         }
 
         // METODI PER CALCOLARE L'IMMAGINE GIUSTA DALLA MATRICE 3X3
         //  4 METODI 2 PER L'UOMO 2 PER LA DONNA
         private void calcolaMPeso(int peso) {
             if (peso < 60) {
-                x = 1;
-            } else if(peso <=80){
-                x = 2;
-            }
-            else{
-                x=3;
+                y = 1;
+            } else if (peso <= 80) {
+                y = 2;
+            } else {
+                y = 3;
             }
 
         }
 
         private void calcolaMAltezza(int altezza) {
             if (altezza < 150) {
-                y = 1;
+                x = 1;
             } else if (altezza <= 175) {
-                y = 2;
+                x = 2;
             } else {
-                y = 3;
+                x = 3;
             }
         }
 
         private void calcolaFPeso(int peso) {
             if (peso < 50) {
-                x = 1;
-            } else if(peso <=70){
-                x = 2;
-            }else{
-                x=3;
+                y = 1;
+            } else if (peso <= 70) {
+                y = 2;
+            } else {
+                y = 3;
             }
 
         }
 
         private void calcolaFAltezza(int altezza) {
             if (altezza < 110) {
-                y = 1;
+                x = 1;
             } else if (altezza <= 165) {
-                y = 2;
+                x = 2;
             } else {
-                y = 3;
+                x = 3;
             }
         }
 

@@ -13,10 +13,11 @@ public class Utenza implements java.io.Serializable{
     private int eta;   // da 0 a 99
     private int altezza;  // da 0 a 250
     private int peso;    // da 0 a 200
-    private Taglia tagliaAbituale;  //  S M L XL XXL
     private boolean sesso; // M - 0 F - 1  Bonus (Frigorifero)
     private int pesoDesiderato;//peso a cui si desidera arrivare 
- 
+    // ATTRIBUTI PER SCEGLIERE IL MODELLINO
+    private int x = 2;
+    private int y = 2;
     
     // NUOVO ATTRIBUTO PER AUMENTO O PERDITA PESO
     
@@ -152,15 +153,7 @@ public class Utenza implements java.io.Serializable{
         this.peso = peso;
     }
 
-    public Taglia getTagliaAbituale() {
-        return tagliaAbituale;
-    }
-
-    public void setTagliaAbituale(Taglia tagliaAbituale) {
-        this.tagliaAbituale = tagliaAbituale;
-    }
-
-    public boolean isSesso() {
+    public boolean getSesso() {
         return sesso;
     }
 
@@ -175,4 +168,21 @@ public class Utenza implements java.io.Serializable{
     public void setPassword(String password) {
         this.password = password;
     }
+
+    public int getX() {
+        return x;
+    }
+
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public void setY(int y) {
+        this.y = y;
+    }
+    
 }

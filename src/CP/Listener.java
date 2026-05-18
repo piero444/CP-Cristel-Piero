@@ -184,7 +184,7 @@ public class Listener implements ActionListener {
                 frame.setTitle("Home");
 
                 leggiUtente();
-                if (re1.getSesso()) {
+                if (utente.getSesso()) {
                     immagine = new ImageIcon(getClass().getResource("/data/ModFemmine/f" + utente.getY() + utente.getX() + ".png"));
                 } else {
                     immagine = new ImageIcon(getClass().getResource("/data/ModMaschi/m" + utente.getY() + utente.getX() + ".png"));

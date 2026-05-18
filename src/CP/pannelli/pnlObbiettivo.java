@@ -15,7 +15,7 @@ public class pnlObbiettivo extends javax.swing.JPanel {
 
     public pnlObbiettivo() {
         initComponents();
-        
+
         AscoltatoreSpinner a1 = new AscoltatoreSpinner(spnPesoD);
         spnPesoD.addChangeListener(a1);
         spnPesoD.addMouseListener(a1);
@@ -39,11 +39,11 @@ public class pnlObbiettivo extends javax.swing.JPanel {
     public int getPesoD() {
         return (int) spnPesoD.getValue();
     }
-    
-    public int getJ()
-    {
+
+    public int getJ() {
         return j;
     }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -90,7 +90,6 @@ public class pnlObbiettivo extends javax.swing.JPanel {
         jPanel8.setMaximumSize(new java.awt.Dimension(450, 700));
         jPanel8.setMinimumSize(new java.awt.Dimension(450, 700));
         jPanel8.setPreferredSize(new java.awt.Dimension(450, 700));
-        jPanel8.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 5, 30));
 
         jPanel6.setBackground(new java.awt.Color(191, 230, 249));
         jPanel6.setForeground(new java.awt.Color(15, 76, 156));
@@ -107,31 +106,35 @@ public class pnlObbiettivo extends javax.swing.JPanel {
 
         jPanel23.setBackground(new java.awt.Color(255, 255, 255));
         jPanel23.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel23.setMaximumSize(new java.awt.Dimension(400, 565));
-        jPanel23.setMinimumSize(new java.awt.Dimension(400, 565));
-        jPanel23.setPreferredSize(new java.awt.Dimension(400, 565));
+        jPanel23.setMaximumSize(new java.awt.Dimension(400, 640));
+        jPanel23.setMinimumSize(new java.awt.Dimension(400, 640));
+        jPanel23.setPreferredSize(new java.awt.Dimension(400, 640));
 
         modellino.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        modellino.setMaximumSize(new java.awt.Dimension(300, 485));
-        modellino.setMinimumSize(new java.awt.Dimension(300, 485));
+        modellino.setMaximumSize(new java.awt.Dimension(300, 640));
+        modellino.setMinimumSize(new java.awt.Dimension(300, 640));
         modellino.setName(""); // NOI18N
-        modellino.setPreferredSize(new java.awt.Dimension(300, 485));
+        modellino.setPreferredSize(new java.awt.Dimension(300, 640));
 
         javax.swing.GroupLayout jPanel23Layout = new javax.swing.GroupLayout(jPanel23);
         jPanel23.setLayout(jPanel23Layout);
         jPanel23Layout.setHorizontalGroup(
             jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel23Layout.createSequentialGroup()
-                .addContainerGap(50, Short.MAX_VALUE)
-                .addComponent(modellino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(48, 48, 48))
+            .addGap(0, 398, Short.MAX_VALUE)
+            .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel23Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(modellino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         jPanel23Layout.setVerticalGroup(
             jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel23Layout.createSequentialGroup()
-                .addContainerGap(37, Short.MAX_VALUE)
-                .addComponent(modellino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(41, 41, 41))
+            .addGap(0, 640, Short.MAX_VALUE)
+            .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel23Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(modellino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         jPanel8.add(jPanel23);
@@ -193,6 +196,7 @@ public class pnlObbiettivo extends javax.swing.JPanel {
         jPanel22.setMaximumSize(new java.awt.Dimension(400, 450));
         jPanel22.setMinimumSize(new java.awt.Dimension(400, 450));
         jPanel22.setPreferredSize(new java.awt.Dimension(400, 450));
+        jPanel22.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 5, 0));
 
         modellino1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         modellino1.setMaximumSize(new java.awt.Dimension(300, 485));
@@ -294,7 +298,7 @@ public class pnlObbiettivo extends javax.swing.JPanel {
             calcolaMPeso(peso);
             // CAMBIA MODELLINO MASCHILE
 
-            immagine = new ImageIcon(getClass().getResource("/data/ModMaschi/m" + j + listener.getAltezza() + ".png"));
+            immagine = new ImageIcon(getClass().getResource("/data/ModMaschi/m" + listener.getAltezza() + j + ".png"));
             modellino1.setIcon(immagine);
 
         }
@@ -304,7 +308,7 @@ public class pnlObbiettivo extends javax.swing.JPanel {
             calcolaFPeso(peso);
 
             // CAMBIA MODELLINO FEMMINILE
-            immagine = new ImageIcon(getClass().getResource("/data/ModFemmine/f" + j + listener.getAltezza() + ".png"));
+            immagine = new ImageIcon(getClass().getResource("/data/ModFemmine/f" + listener.getAltezza() + j + ".png"));
             modellino1.setIcon(immagine);
 
         }

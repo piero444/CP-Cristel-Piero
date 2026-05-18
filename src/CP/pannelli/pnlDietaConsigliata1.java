@@ -41,7 +41,13 @@ public class pnlDietaConsigliata1 extends javax.swing.JPanel {
         jPanel10 = new javax.swing.JPanel();
         jPanel18 = new javax.swing.JPanel();
         jButton4 = new javax.swing.JButton();
-        lDieta = new javax.swing.JLabel();
+        lDieta = new javax.swing.JTextField();
+        jPanel15 = new javax.swing.JPanel();
+        jLabel10 = new javax.swing.JLabel();
+        jSpinner12 = new javax.swing.JSpinner();
+        jPanel13 = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
+        spnPeso = new javax.swing.JSpinner();
         jPanel11 = new javax.swing.JPanel();
         jPanel17 = new javax.swing.JPanel();
         jButton3 = new javax.swing.JButton();
@@ -63,9 +69,10 @@ public class pnlDietaConsigliata1 extends javax.swing.JPanel {
         jPanel5.setBackground(new java.awt.Color(191, 230, 249));
         jPanel5.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 4, 41));
 
-        jPanel7.setMaximumSize(new java.awt.Dimension(850, 610));
-        jPanel7.setMinimumSize(new java.awt.Dimension(850, 610));
-        jPanel7.setPreferredSize(new java.awt.Dimension(850, 610));
+        jPanel7.setMaximumSize(new java.awt.Dimension(850, 640));
+        jPanel7.setMinimumSize(new java.awt.Dimension(850, 640));
+        jPanel7.setPreferredSize(new java.awt.Dimension(850, 640));
+        jPanel7.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 5, 0));
 
         jPanel1.setMaximumSize(new java.awt.Dimension(430, 600));
         jPanel1.setMinimumSize(new java.awt.Dimension(430, 600));
@@ -112,20 +119,59 @@ public class pnlDietaConsigliata1 extends javax.swing.JPanel {
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
         jButton4.setText("Consiglia");
         jButton4.setActionCommand("Calcola dieta");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
-            }
-        });
         jPanel18.add(jButton4);
 
         jPanel10.add(jPanel18);
 
-        lDieta.setFont(new java.awt.Font("Segoe Print", 0, 16)); // NOI18N
+        lDieta.setEditable(false);
+        lDieta.setBackground(new java.awt.Color(191, 230, 249));
         lDieta.setMaximumSize(new java.awt.Dimension(280, 200));
         lDieta.setMinimumSize(new java.awt.Dimension(280, 200));
         lDieta.setPreferredSize(new java.awt.Dimension(280, 200));
         jPanel10.add(lDieta);
+
+        jPanel15.setBackground(new java.awt.Color(15, 76, 156));
+        jPanel15.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel15.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel15.setMaximumSize(new java.awt.Dimension(400, 60));
+        jPanel15.setMinimumSize(new java.awt.Dimension(400, 60));
+        jPanel15.setPreferredSize(new java.awt.Dimension(400, 60));
+        jPanel15.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 20, 5));
+
+        jLabel10.setFont(new java.awt.Font("Verdana Pro Cond Light", 0, 18)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setText("<html>Inserisci il peso a <br>cui vuoi arrivare<html>");
+        jLabel10.setMaximumSize(new java.awt.Dimension(130, 46));
+        jLabel10.setMinimumSize(new java.awt.Dimension(130, 46));
+        jPanel15.add(jLabel10);
+
+        jSpinner12.setMaximumSize(new java.awt.Dimension(70, 30));
+        jSpinner12.setMinimumSize(new java.awt.Dimension(70, 30));
+        jSpinner12.setPreferredSize(new java.awt.Dimension(70, 30));
+        jPanel15.add(jSpinner12);
+
+        jPanel10.add(jPanel15);
+
+        jPanel13.setBackground(new java.awt.Color(15, 76, 156));
+        jPanel13.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel13.setMaximumSize(new java.awt.Dimension(400, 60));
+        jPanel13.setMinimumSize(new java.awt.Dimension(400, 60));
+        jPanel13.setPreferredSize(new java.awt.Dimension(400, 60));
+        jPanel13.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 20, 5));
+
+        jLabel8.setFont(new java.awt.Font("Verdana Pro Cond Light", 0, 18)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText("<html>Inserisci il tuo<br> peso<html>");
+        jLabel8.setMaximumSize(new java.awt.Dimension(106, 46));
+        jLabel8.setMinimumSize(new java.awt.Dimension(106, 46));
+        jPanel13.add(jLabel8);
+
+        spnPeso.setMaximumSize(new java.awt.Dimension(70, 30));
+        spnPeso.setMinimumSize(new java.awt.Dimension(70, 30));
+        spnPeso.setPreferredSize(new java.awt.Dimension(70, 30));
+        jPanel13.add(spnPeso);
+
+        jPanel10.add(jPanel13);
 
         jPanel9.add(jPanel10);
 
@@ -133,7 +179,7 @@ public class pnlDietaConsigliata1 extends javax.swing.JPanel {
         jPanel11.setMaximumSize(new java.awt.Dimension(350, 110));
         jPanel11.setMinimumSize(new java.awt.Dimension(350, 110));
         jPanel11.setPreferredSize(new java.awt.Dimension(350, 110));
-        jPanel11.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 5, 25));
+        jPanel11.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 5, 20));
 
         jPanel17.setBackground(new java.awt.Color(15, 76, 156));
         jPanel17.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -147,6 +193,7 @@ public class pnlDietaConsigliata1 extends javax.swing.JPanel {
         jButton3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("Torna alla home");
+        jButton3.setActionCommand("Torna alla home");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -163,15 +210,16 @@ public class pnlDietaConsigliata1 extends javax.swing.JPanel {
         jPanel7.add(jPanel1);
 
         jPanel12.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel12.setMaximumSize(new java.awt.Dimension(400, 600));
-        jPanel12.setMinimumSize(new java.awt.Dimension(400, 600));
-        jPanel12.setPreferredSize(new java.awt.Dimension(400, 600));
+        jPanel12.setMaximumSize(new java.awt.Dimension(400, 640));
+        jPanel12.setMinimumSize(new java.awt.Dimension(400, 640));
+        jPanel12.setPreferredSize(new java.awt.Dimension(400, 640));
+        jPanel12.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 5, 0));
 
         modellino.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        modellino.setMaximumSize(new java.awt.Dimension(300, 585));
-        modellino.setMinimumSize(new java.awt.Dimension(300, 585));
+        modellino.setMaximumSize(new java.awt.Dimension(300, 640));
+        modellino.setMinimumSize(new java.awt.Dimension(300, 640));
         modellino.setName(""); // NOI18N
-        modellino.setPreferredSize(new java.awt.Dimension(300, 585));
+        modellino.setPreferredSize(new java.awt.Dimension(300, 640));
         jPanel12.add(modellino);
 
         jPanel7.add(jPanel12);
@@ -218,11 +266,15 @@ public class pnlDietaConsigliata1 extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel13;
+    private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel17;
     private javax.swing.JPanel jPanel18;
     private javax.swing.JPanel jPanel3;
@@ -231,7 +283,9 @@ public class pnlDietaConsigliata1 extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
-    private javax.swing.JLabel lDieta;
+    private javax.swing.JSpinner jSpinner12;
+    private javax.swing.JTextField lDieta;
     private javax.swing.JLabel modellino;
+    private javax.swing.JSpinner spnPeso;
     // End of variables declaration//GEN-END:variables
 }

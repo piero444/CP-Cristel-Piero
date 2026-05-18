@@ -68,9 +68,10 @@ public class pnlCalcoloFabbisognoCalorico extends javax.swing.JPanel {
         jPanel5.setBackground(new java.awt.Color(191, 230, 249));
         jPanel5.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 4, 41));
 
-        jPanel7.setMaximumSize(new java.awt.Dimension(850, 610));
-        jPanel7.setMinimumSize(new java.awt.Dimension(850, 610));
-        jPanel7.setPreferredSize(new java.awt.Dimension(850, 610));
+        jPanel7.setMaximumSize(new java.awt.Dimension(850, 640));
+        jPanel7.setMinimumSize(new java.awt.Dimension(850, 640));
+        jPanel7.setPreferredSize(new java.awt.Dimension(850, 640));
+        jPanel7.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 5, 0));
 
         jPanel1.setMaximumSize(new java.awt.Dimension(430, 600));
         jPanel1.setMinimumSize(new java.awt.Dimension(430, 600));
@@ -153,7 +154,6 @@ public class pnlCalcoloFabbisognoCalorico extends javax.swing.JPanel {
         jButton3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("Torna alla home");
-        jButton3.setActionCommand("Torna alla home");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -170,23 +170,23 @@ public class pnlCalcoloFabbisognoCalorico extends javax.swing.JPanel {
         jPanel7.add(jPanel1);
 
         jPanel12.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel12.setMaximumSize(new java.awt.Dimension(400, 600));
-        jPanel12.setMinimumSize(new java.awt.Dimension(400, 600));
-        jPanel12.setPreferredSize(new java.awt.Dimension(400, 600));
-        jPanel12.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 5, 50));
+        jPanel12.setMaximumSize(new java.awt.Dimension(400, 640));
+        jPanel12.setMinimumSize(new java.awt.Dimension(400, 640));
+        jPanel12.setPreferredSize(new java.awt.Dimension(400, 640));
+        jPanel12.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 5, 0));
 
         modellino.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        modellino.setMaximumSize(new java.awt.Dimension(200, 385));
-        modellino.setMinimumSize(new java.awt.Dimension(200, 385));
+        modellino.setMaximumSize(new java.awt.Dimension(300, 640));
+        modellino.setMinimumSize(new java.awt.Dimension(300, 640));
         modellino.setName(""); // NOI18N
-        modellino.setPreferredSize(new java.awt.Dimension(200, 385));
+        modellino.setPreferredSize(new java.awt.Dimension(300, 640));
         jPanel12.add(modellino);
 
         labelDinamica.setBackground(new java.awt.Color(191, 230, 249));
-        labelDinamica.setMaximumSize(new java.awt.Dimension(280, 100));
-        labelDinamica.setMinimumSize(new java.awt.Dimension(280, 100));
+        labelDinamica.setMaximumSize(new java.awt.Dimension(80, 200));
+        labelDinamica.setMinimumSize(new java.awt.Dimension(80, 200));
         labelDinamica.setName(""); // NOI18N
-        labelDinamica.setPreferredSize(new java.awt.Dimension(280, 100));
+        labelDinamica.setPreferredSize(new java.awt.Dimension(80, 200));
         jPanel12.add(labelDinamica);
 
         jPanel7.add(jPanel12);

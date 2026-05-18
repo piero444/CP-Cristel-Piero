@@ -63,9 +63,9 @@ public class ListenerHome implements ActionListener {
         utente = listener.getUtente();
 
         if (listener.getSesso()) {
-            immagine = new ImageIcon(getClass().getResource("/data/ModFemmine/f" + y + x + ".png"));
+            immagine = new ImageIcon(getClass().getResource("/data/ModFemmine/f" + x + y + ".png"));
         } else {
-            immagine = new ImageIcon(getClass().getResource("/data/ModMaschi/m" + y + x + ".png"));
+            immagine = new ImageIcon(getClass().getResource("/data/ModMaschi/m" + x + y + ".png"));
         }
 
         switch (comando) {
@@ -74,6 +74,7 @@ public class ListenerHome implements ActionListener {
                 cFB.setVisible(false);
                 idratazione.setVisible(false);
                 dieta.setVisible(false);
+                obbiettivo.setVisible(false);
                 esercizi.setVisible(false);
 
                 // E RIMETTO VISIBILE SOLO LA HOME
@@ -83,14 +84,13 @@ public class ListenerHome implements ActionListener {
             case "Esercizi": {
 
                 esercizi.impostaModellino(immagine);
-                if(obbiettivo.getJ()==0)
-                {
+                if (obbiettivo.getJ() == 0) {
                     JOptionPane.showMessageDialog(null, "inserire il peso desiderato", "Errore", JOptionPane.ERROR_MESSAGE);
                 }
                 if (listener.getSesso()) {
-                    immagine1 = new ImageIcon(getClass().getResource("/data/ModFemmine/f" + obbiettivo.getJ() + x + ".png"));
+                    immagine1 = new ImageIcon(getClass().getResource("/data/ModFemmine/f" + x + obbiettivo.getJ() + ".png"));
                 } else {
-                    immagine1 = new ImageIcon(getClass().getResource("/data/ModMaschi/m" + obbiettivo.getJ() + x + ".png"));
+                    immagine1 = new ImageIcon(getClass().getResource("/data/ModMaschi/m" + x + obbiettivo.getJ() + ".png"));
                 }
                 esercizi.impostaModellinoDesiderato(immagine1);
                 obbiettivo.setVisible(false);

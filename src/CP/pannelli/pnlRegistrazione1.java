@@ -31,7 +31,7 @@ public class pnlRegistrazione1 extends javax.swing.JPanel {
 
     public pnlRegistrazione1() {
         initComponents();
-
+        
         AscoltatoreSpinner a1 = new AscoltatoreSpinner(spnEtà);
         spnEtà.addChangeListener(a1);
         spnEtà.addMouseListener(a1);
@@ -76,6 +76,7 @@ public class pnlRegistrazione1 extends javax.swing.JPanel {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jPanel12 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
@@ -87,18 +88,16 @@ public class pnlRegistrazione1 extends javax.swing.JPanel {
         jLabel8 = new javax.swing.JLabel();
         spnPeso = new javax.swing.JSpinner();
         jPanel3 = new javax.swing.JPanel();
-        jPanel6 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
         modellino = new javax.swing.JLabel();
-        jPanel5 = new javax.swing.JPanel();
-        Registrati = new javax.swing.JButton();
+        jPanel8 = new javax.swing.JPanel();
+        btnAvanti = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(92, 209, 255));
         setMaximumSize(new java.awt.Dimension(1000, 800));
         setMinimumSize(new java.awt.Dimension(1000, 800));
         setPreferredSize(new java.awt.Dimension(1000, 800));
-        setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 4, 45));
+        setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 4, 15));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setMaximumSize(new java.awt.Dimension(450, 500));
@@ -112,16 +111,21 @@ public class pnlRegistrazione1 extends javax.swing.JPanel {
         jPanel2.setBorder(javax.swing.BorderFactory.createEmptyBorder(50, 60, 30, 50));
         jPanel2.setMaximumSize(new java.awt.Dimension(450, 545));
         jPanel2.setMinimumSize(new java.awt.Dimension(450, 545));
-        jPanel2.setPreferredSize(new java.awt.Dimension(450, 545));
+        jPanel2.setPreferredSize(new java.awt.Dimension(450, 645));
         jPanel2.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 5, 50));
+
+        jLabel3.setBackground(new java.awt.Color(190, 216, 212));
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel3.setText("Anteprima modellino");
+        jPanel2.add(jLabel3);
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 102));
         jPanel4.setToolTipText("avanti");
         jPanel4.setMaximumSize(new java.awt.Dimension(500, 600));
         jPanel4.setMinimumSize(new java.awt.Dimension(500, 600));
         jPanel4.setOpaque(false);
-        jPanel4.setPreferredSize(new java.awt.Dimension(500, 600));
-        jPanel4.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 5, 50));
+        jPanel4.setPreferredSize(new java.awt.Dimension(500, 700));
+        jPanel4.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 5, 70));
 
         jPanel12.setBackground(new java.awt.Color(15, 76, 156));
         jPanel12.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -200,75 +204,63 @@ public class pnlRegistrazione1 extends javax.swing.JPanel {
 
         jPanel3.setBackground(new java.awt.Color(191, 230, 249));
         jPanel3.setToolTipText("");
-        jPanel3.setMaximumSize(new java.awt.Dimension(500, 545));
-        jPanel3.setMinimumSize(new java.awt.Dimension(500, 545));
-        jPanel3.setPreferredSize(new java.awt.Dimension(500, 545));
-        jPanel3.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 5, 15));
-
-        jPanel6.setBackground(new java.awt.Color(191, 230, 249));
-        jPanel6.setForeground(new java.awt.Color(15, 76, 156));
-        jPanel6.setMaximumSize(new java.awt.Dimension(260, 45));
-        jPanel6.setMinimumSize(new java.awt.Dimension(260, 45));
-        jPanel6.setPreferredSize(new java.awt.Dimension(260, 45));
-
-        jLabel3.setBackground(new java.awt.Color(190, 216, 212));
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel3.setText("Anteprima modellino");
-        jPanel6.add(jLabel3);
-
-        jPanel3.add(jPanel6);
+        jPanel3.setMaximumSize(new java.awt.Dimension(500, 645));
+        jPanel3.setMinimumSize(new java.awt.Dimension(500, 645));
+        jPanel3.setPreferredSize(new java.awt.Dimension(500, 645));
+        jPanel3.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 5, 2));
 
         jPanel7.setBackground(new java.awt.Color(255, 255, 255));
         jPanel7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel7.setMaximumSize(new java.awt.Dimension(420, 440));
-        jPanel7.setMinimumSize(new java.awt.Dimension(420, 440));
-        jPanel7.setPreferredSize(new java.awt.Dimension(420, 440));
-        jPanel7.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 10, 30));
+        jPanel7.setMaximumSize(new java.awt.Dimension(420, 640));
+        jPanel7.setMinimumSize(new java.awt.Dimension(420, 640));
+        jPanel7.setPreferredSize(new java.awt.Dimension(420, 640));
+        jPanel7.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 10, 0));
 
         modellino.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        modellino.setMaximumSize(new java.awt.Dimension(200, 385));
-        modellino.setMinimumSize(new java.awt.Dimension(200, 385));
+        modellino.setMaximumSize(new java.awt.Dimension(300, 640));
+        modellino.setMinimumSize(new java.awt.Dimension(300, 640));
         modellino.setName(""); // NOI18N
-        modellino.setPreferredSize(new java.awt.Dimension(200, 385));
+        modellino.setPreferredSize(new java.awt.Dimension(300, 640));
         jPanel7.add(modellino);
 
         jPanel3.add(jPanel7);
 
         jPanel1.add(jPanel3);
 
-        jPanel5.setBorder(javax.swing.BorderFactory.createEmptyBorder(40, 40, 40, 40));
-        jPanel5.setOpaque(false);
-        jPanel5.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 30, 5));
+        add(jPanel1);
 
-        Registrati.setBackground(new java.awt.Color(32, 129, 195));
-        Registrati.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        Registrati.setForeground(new java.awt.Color(255, 255, 255));
-        Registrati.setText("Conferma registrazione");
-        Registrati.setToolTipText("");
-        Registrati.setBorderPainted(false);
-        Registrati.setMaximumSize(new java.awt.Dimension(950, 50));
-        Registrati.setMinimumSize(new java.awt.Dimension(950, 50));
-        Registrati.setPreferredSize(new java.awt.Dimension(950, 50));
-        Registrati.addActionListener(new java.awt.event.ActionListener() {
+        jPanel8.setBackground(new java.awt.Color(92, 209, 255));
+        jPanel8.setMaximumSize(new java.awt.Dimension(1090, 80));
+        jPanel8.setMinimumSize(new java.awt.Dimension(1090, 80));
+        jPanel8.setPreferredSize(new java.awt.Dimension(1090, 80));
+
+        btnAvanti.setBackground(new java.awt.Color(32, 129, 195));
+        btnAvanti.setFont(new java.awt.Font("Segoe UI Historic", 0, 20)); // NOI18N
+        btnAvanti.setForeground(new java.awt.Color(255, 255, 255));
+        btnAvanti.setText("Conferma registrazione");
+        btnAvanti.setBorderPainted(false);
+        btnAvanti.setMaximumSize(new java.awt.Dimension(1000, 50));
+        btnAvanti.setMinimumSize(new java.awt.Dimension(1000, 50));
+        btnAvanti.setPreferredSize(new java.awt.Dimension(1000, 50));
+        btnAvanti.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RegistratiActionPerformed(evt);
+                btnAvantiActionPerformed(evt);
             }
         });
-        jPanel5.add(Registrati);
+        jPanel8.add(btnAvanti);
 
-        jPanel1.add(jPanel5);
-
-        add(jPanel1);
+        add(jPanel8);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void RegistratiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistratiActionPerformed
+    private void btnAvantiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAvantiActionPerformed
+        // AVANTI
         //   PASSO IL CONTROLLO DEL EVENTO ALLA CLASSE ASCOLTATORE
         listener.actionPerformed(evt);
-    }//GEN-LAST:event_RegistratiActionPerformed
+    }//GEN-LAST:event_btnAvantiActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Registrati;
+    private javax.swing.JButton btnAvanti;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -280,9 +272,8 @@ public class pnlRegistrazione1 extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
     private javax.swing.JLabel modellino;
     private javax.swing.JSpinner spnAltezza;
     private javax.swing.JSpinner spnEtà;
@@ -313,19 +304,19 @@ public class pnlRegistrazione1 extends javax.swing.JPanel {
                 peso = getPeso();
                 if (sesso) {
                     // FEMMINA
-                    scambiaModellinoF(peso, altezza);
+                    scambiaModellinoF();
                 } else {
                     // MASCHIO
-                    scambiaModellinoM(peso, altezza);
+                    scambiaModellinoM();
                 }
             } else if (spinner == spnAltezza) {
                 altezza = getAltezza();
                 if (sesso) {
                     // FEMMINA
-                    scambiaModellinoF(peso, altezza);
+                    scambiaModellinoF();
                 } else {
                     // MASCHIO
-                    scambiaModellinoM(peso, altezza);
+                    scambiaModellinoM();
                 }
             }
         }
@@ -337,34 +328,34 @@ public class pnlRegistrazione1 extends javax.swing.JPanel {
         }
 
         // METODI UTILI
-        private void scambiaModellinoM(int peso, int altezza) {
+        private void scambiaModellinoM() {
 
-            calcolaMPeso(peso);
-            calcolaMAltezza(altezza);
+            calcolaMPeso();
+            calcolaMAltezza();
             // CAMBIA MODELLINO MASCHILE
-
-            immagine = new ImageIcon(getClass().getResource("/data/ModMaschi/m" + y + x + ".png"));
+            System.out.println("M -> x=" + x + ", y=" + y);// debug
+            immagine = new ImageIcon(getClass().getResource("/data/ModMaschi/m" + x + y + ".png"));
             modellino.setIcon(immagine);
 
         }
 
-        private void scambiaModellinoF(int peso, int altezza) {
+        private void scambiaModellinoF() {
 
-            calcolaFPeso(peso);
-            calcolaFAltezza(altezza);
-
+            calcolaFPeso();
+            calcolaFAltezza();
+            System.out.println("F -> x=" + x + ", y=" + y);// debug
             // CAMBIA MODELLINO FEMMINILE
-            immagine = new ImageIcon(getClass().getResource("/data/ModFemmine/f" + y + x + ".png"));
+            immagine = new ImageIcon(getClass().getResource("/data/ModFemmine/f" + x + y + ".png"));
             modellino.setIcon(immagine);
 
         }
 
         // METODI PER CALCOLARE L'IMMAGINE GIUSTA DALLA MATRICE 3X3
         //  4 METODI 2 PER L'UOMO 2 PER LA DONNA
-        private void calcolaMPeso(int peso) {
-            if (peso < 60) {
+        private void calcolaMPeso() {
+            if (getPeso()< 60) {
                 y = 1;
-            } else if (peso <= 80) {
+            } else if (getPeso() <= 80) {
                 y = 2;
             } else {
                 y = 3;
@@ -372,20 +363,20 @@ public class pnlRegistrazione1 extends javax.swing.JPanel {
 
         }
 
-        private void calcolaMAltezza(int altezza) {
-            if (altezza < 150) {
+        private void calcolaMAltezza() {
+            if (getAltezza() < 150) {
                 x = 1;
-            } else if (altezza <= 175) {
+            } else if (getAltezza() <= 175) {
                 x = 2;
             } else {
                 x = 3;
             }
         }
 
-        private void calcolaFPeso(int peso) {
-            if (peso < 50) {
+        private void calcolaFPeso() {
+            if (getPeso() < 50) {
                 y = 1;
-            } else if (peso <= 70) {
+            } else if (getPeso() <= 70) {
                 y = 2;
             } else {
                 y = 3;
@@ -393,10 +384,10 @@ public class pnlRegistrazione1 extends javax.swing.JPanel {
 
         }
 
-        private void calcolaFAltezza(int altezza) {
-            if (altezza < 110) {
+        private void calcolaFAltezza() {
+            if (getAltezza() < 110) {
                 x = 1;
-            } else if (altezza <= 165) {
+            } else if (getAltezza() <= 165) {
                 x = 2;
             } else {
                 x = 3;

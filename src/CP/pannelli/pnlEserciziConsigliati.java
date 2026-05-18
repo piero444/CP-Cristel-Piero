@@ -72,49 +72,38 @@ public class pnlEserciziConsigliati extends javax.swing.JPanel {
         jPanel8.setMaximumSize(new java.awt.Dimension(450, 700));
         jPanel8.setMinimumSize(new java.awt.Dimension(450, 700));
         jPanel8.setPreferredSize(new java.awt.Dimension(450, 700));
-        jPanel8.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 5, 20));
+        jPanel8.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 5, 7));
 
         jPanel6.setBackground(new java.awt.Color(191, 230, 249));
         jPanel6.setForeground(new java.awt.Color(15, 76, 156));
-        jPanel6.setMaximumSize(new java.awt.Dimension(260, 45));
-        jPanel6.setMinimumSize(new java.awt.Dimension(260, 45));
-        jPanel6.setPreferredSize(new java.awt.Dimension(260, 45));
+        jPanel6.setMaximumSize(new java.awt.Dimension(260, 27));
+        jPanel6.setMinimumSize(new java.awt.Dimension(260, 27));
+        jPanel6.setPreferredSize(new java.awt.Dimension(260, 27));
+        jPanel6.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 5, 0));
 
         jLabel3.setBackground(new java.awt.Color(190, 216, 212));
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel3.setText("Modellino attuale");
+        jLabel3.setMaximumSize(new java.awt.Dimension(215, 25));
+        jLabel3.setMinimumSize(new java.awt.Dimension(215, 25));
+        jLabel3.setPreferredSize(new java.awt.Dimension(215, 25));
         jPanel6.add(jLabel3);
 
         jPanel8.add(jPanel6);
 
         jPanel23.setBackground(new java.awt.Color(255, 255, 255));
         jPanel23.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel23.setMaximumSize(new java.awt.Dimension(400, 583));
-        jPanel23.setMinimumSize(new java.awt.Dimension(400, 583));
-        jPanel23.setPreferredSize(new java.awt.Dimension(400, 583));
+        jPanel23.setMaximumSize(new java.awt.Dimension(400, 640));
+        jPanel23.setMinimumSize(new java.awt.Dimension(400, 640));
+        jPanel23.setPreferredSize(new java.awt.Dimension(400, 640));
+        jPanel23.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 5, 0));
 
         modellino.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        modellino.setMaximumSize(new java.awt.Dimension(300, 485));
-        modellino.setMinimumSize(new java.awt.Dimension(300, 485));
+        modellino.setMaximumSize(new java.awt.Dimension(300, 640));
+        modellino.setMinimumSize(new java.awt.Dimension(300, 640));
         modellino.setName(""); // NOI18N
-        modellino.setPreferredSize(new java.awt.Dimension(300, 485));
-
-        javax.swing.GroupLayout jPanel23Layout = new javax.swing.GroupLayout(jPanel23);
-        jPanel23.setLayout(jPanel23Layout);
-        jPanel23Layout.setHorizontalGroup(
-            jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel23Layout.createSequentialGroup()
-                .addContainerGap(50, Short.MAX_VALUE)
-                .addComponent(modellino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(48, 48, 48))
-        );
-        jPanel23Layout.setVerticalGroup(
-            jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel23Layout.createSequentialGroup()
-                .addContainerGap(55, Short.MAX_VALUE)
-                .addComponent(modellino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(41, 41, 41))
-        );
+        modellino.setPreferredSize(new java.awt.Dimension(300, 640));
+        jPanel23.add(modellino);
 
         jPanel8.add(jPanel23);
 
@@ -125,46 +114,28 @@ public class pnlEserciziConsigliati extends javax.swing.JPanel {
         jPanel9.setMaximumSize(new java.awt.Dimension(450, 700));
         jPanel9.setMinimumSize(new java.awt.Dimension(450, 700));
         jPanel9.setPreferredSize(new java.awt.Dimension(450, 700));
-        jPanel9.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 5, 17));
+        jPanel9.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 5, 40));
 
         jPanel22.setBackground(new java.awt.Color(255, 255, 255));
         jPanel22.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel22.setMaximumSize(new java.awt.Dimension(400, 650));
-        jPanel22.setMinimumSize(new java.awt.Dimension(400, 650));
-        jPanel22.setPreferredSize(new java.awt.Dimension(400, 650));
+        jPanel22.setMaximumSize(new java.awt.Dimension(400, 640));
+        jPanel22.setMinimumSize(new java.awt.Dimension(400, 640));
+        jPanel22.setPreferredSize(new java.awt.Dimension(400, 640));
+        jPanel22.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 5, 0));
 
         modellino1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        modellino1.setMaximumSize(new java.awt.Dimension(300, 485));
-        modellino1.setMinimumSize(new java.awt.Dimension(300, 485));
+        modellino1.setMaximumSize(new java.awt.Dimension(300, 640));
+        modellino1.setMinimumSize(new java.awt.Dimension(300, 640));
         modellino1.setName(""); // NOI18N
-        modellino1.setPreferredSize(new java.awt.Dimension(300, 485));
+        modellino1.setPreferredSize(new java.awt.Dimension(300, 640));
+        jPanel22.add(modellino1);
 
         labelDinamica.setBackground(new java.awt.Color(191, 230, 249));
-        labelDinamica.setMaximumSize(new java.awt.Dimension(280, 100));
-        labelDinamica.setMinimumSize(new java.awt.Dimension(280, 100));
+        labelDinamica.setMaximumSize(new java.awt.Dimension(80, 200));
+        labelDinamica.setMinimumSize(new java.awt.Dimension(80, 200));
         labelDinamica.setName(""); // NOI18N
-        labelDinamica.setPreferredSize(new java.awt.Dimension(280, 100));
-
-        javax.swing.GroupLayout jPanel22Layout = new javax.swing.GroupLayout(jPanel22);
-        jPanel22.setLayout(jPanel22Layout);
-        jPanel22Layout.setHorizontalGroup(
-            jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel22Layout.createSequentialGroup()
-                .addContainerGap(63, Short.MAX_VALUE)
-                .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(labelDinamica, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(modellino1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(35, 35, 35))
-        );
-        jPanel22Layout.setVerticalGroup(
-            jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel22Layout.createSequentialGroup()
-                .addContainerGap(12, Short.MAX_VALUE)
-                .addComponent(labelDinamica, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(modellino1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33))
-        );
+        labelDinamica.setPreferredSize(new java.awt.Dimension(80, 200));
+        jPanel22.add(labelDinamica);
 
         jPanel9.add(jPanel22);
 

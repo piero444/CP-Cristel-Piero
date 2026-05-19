@@ -1,15 +1,15 @@
 package CP;
 //  IMPORTO TUTTI I PANNELLI
-import CP.pannelli.pnlRegistrazione;
-import CP.pannelli.pnlRegistrazione1;
-import CP.pannelli.pnlHome;
-import CP.pannelli.pnlSchermata1;
 
 import CP.pannelli.pnlCalcoloFabbisognoCalorico;
 import CP.pannelli.pnlCalcoloIdratazione;
 import CP.pannelli.pnlDietaConsigliata1;
 import CP.pannelli.pnlEserciziConsigliati;
 import CP.pannelli.pnlObbiettivo;
+import CP.pannelli.pnlSchermata1;
+import CP.pannelli.pnlRegistrazione;
+import CP.pannelli.pnlRegistrazione1;
+import CP.pannelli.pnlHome;
 
 public class frmPrincipale extends javax.swing.JFrame {
 

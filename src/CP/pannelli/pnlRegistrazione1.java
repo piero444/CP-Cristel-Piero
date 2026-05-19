@@ -34,15 +34,17 @@ public class pnlRegistrazione1 extends javax.swing.JPanel {
         
         AscoltatoreSpinner a1 = new AscoltatoreSpinner(spnEtà);
         spnEtà.addChangeListener(a1);
-        spnEtà.addMouseListener(a1);
+        // PER I FAR SI CHE SI CANCELLA IL CONTENUTO QUANDO CI CLICCO DENTRO 
+         ((javax.swing.JSpinner.DefaultEditor) spnEtà.getEditor()).getTextField().addMouseListener(a1);
 
         AscoltatoreSpinner a2 = new AscoltatoreSpinner(spnAltezza);
         spnAltezza.addChangeListener(a2);
-        spnAltezza.addMouseListener(a2);
+        ((javax.swing.JSpinner.DefaultEditor) spnAltezza.getEditor()).getTextField().addMouseListener(a2);
+
 
         AscoltatoreSpinner a3 = new AscoltatoreSpinner(spnPeso);
         spnPeso.addChangeListener(a3);
-        spnPeso.addMouseListener(a3);
+        ((javax.swing.JSpinner.DefaultEditor) spnPeso.getEditor()).getTextField().addMouseListener(a3);
     }
 
     //  METDODI GET PER L'ASCOLTATORE
@@ -112,10 +114,10 @@ public class pnlRegistrazione1 extends javax.swing.JPanel {
         jPanel2.setMaximumSize(new java.awt.Dimension(450, 545));
         jPanel2.setMinimumSize(new java.awt.Dimension(450, 545));
         jPanel2.setPreferredSize(new java.awt.Dimension(450, 645));
-        jPanel2.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 5, 50));
+        jPanel2.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 5, 25));
 
         jLabel3.setBackground(new java.awt.Color(190, 216, 212));
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel3.setText("Anteprima modellino");
         jPanel2.add(jLabel3);
 
@@ -125,7 +127,7 @@ public class pnlRegistrazione1 extends javax.swing.JPanel {
         jPanel4.setMinimumSize(new java.awt.Dimension(500, 600));
         jPanel4.setOpaque(false);
         jPanel4.setPreferredSize(new java.awt.Dimension(500, 700));
-        jPanel4.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 5, 70));
+        jPanel4.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 5, 60));
 
         jPanel12.setBackground(new java.awt.Color(15, 76, 156));
         jPanel12.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -216,11 +218,10 @@ public class pnlRegistrazione1 extends javax.swing.JPanel {
         jPanel7.setPreferredSize(new java.awt.Dimension(420, 640));
         jPanel7.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 10, 0));
 
-        modellino.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        modellino.setMaximumSize(new java.awt.Dimension(300, 640));
-        modellino.setMinimumSize(new java.awt.Dimension(300, 640));
+        modellino.setMaximumSize(new java.awt.Dimension(300, 637));
+        modellino.setMinimumSize(new java.awt.Dimension(300, 637));
         modellino.setName(""); // NOI18N
-        modellino.setPreferredSize(new java.awt.Dimension(300, 640));
+        modellino.setPreferredSize(new java.awt.Dimension(300, 637));
         jPanel7.add(modellino);
 
         jPanel3.add(jPanel7);
@@ -333,6 +334,8 @@ public class pnlRegistrazione1 extends javax.swing.JPanel {
             calcolaMPeso();
             calcolaMAltezza();
             // CAMBIA MODELLINO MASCHILE
+            listener.setX(x);
+            listener.setY(y);
             System.out.println("M -> x=" + x + ", y=" + y);// debug
             immagine = new ImageIcon(getClass().getResource("/data/ModMaschi/m" + x + y + ".png"));
             modellino.setIcon(immagine);
@@ -343,6 +346,8 @@ public class pnlRegistrazione1 extends javax.swing.JPanel {
 
             calcolaFPeso();
             calcolaFAltezza();
+            listener.setX(x);
+            listener.setY(y);
             System.out.println("F -> x=" + x + ", y=" + y);// debug
             // CAMBIA MODELLINO FEMMINILE
             immagine = new ImageIcon(getClass().getResource("/data/ModFemmine/f" + x + y + ".png"));

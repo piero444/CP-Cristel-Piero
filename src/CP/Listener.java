@@ -174,8 +174,6 @@ public class Listener implements ActionListener {
         String pw = utente.getPassword();
         if (f.exists()) {  //  L'UTENTE ESISTE
 
-            leggiUtente();
-
             if (pw.equals(utente.getPassword())) {
                 // Accesso consentito
 
@@ -185,9 +183,9 @@ public class Listener implements ActionListener {
 
                 leggiUtente();
                 if (utente.getSesso()) {
-                    immagine = new ImageIcon(getClass().getResource("/data/ModFemmine/f" + utente.getY() + utente.getX() + ".png"));
+                    immagine = new ImageIcon(getClass().getResource("/data/ModFemmine/f" + utente.getX() + utente.getY() + ".png"));
                 } else {
-                    immagine = new ImageIcon(getClass().getResource("/data/ModMaschi/m" + utente.getY() + utente.getX() + ".png"));
+                    immagine = new ImageIcon(getClass().getResource("/data/ModMaschi/m" + utente.getX() + utente.getY() + ".png"));
                 }
                 home.impostaModellino(immagine);
                 home.setVisible(true);
@@ -229,12 +227,12 @@ public class Listener implements ActionListener {
         } catch (NomeNonValidoException ex) {
             JOptionPane.showMessageDialog(null, "Nome non valido", "Errore", JOptionPane.ERROR_MESSAGE);
             return;
-        }catch (PasswordNonValidaException ex) {
+        } catch (PasswordNonValidaException ex) {
 
             //   metterlo centrato                                         
             JOptionPane.showMessageDialog(null, "Password non valida", "Errore", JOptionPane.ERROR_MESSAGE);
             return;
-        } 
+        }
 
         // PRIMA DI ANDARE AL ALTRO PANNELLO IMPOSTO IL MODELLINO E GLI SPINNER DI DEFAULT 
         ImageIcon immagine;
@@ -295,5 +293,13 @@ public class Listener implements ActionListener {
 
     public int getYImmagine() {
         return utente.getY();
+    }
+    public void setX(int x)
+    {
+        utente.setX(x);
+    }
+    public void setY(int y)
+    {
+        utente.setY(y);
     }
 }

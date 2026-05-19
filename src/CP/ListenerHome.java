@@ -7,15 +7,11 @@ import CP.pannelli.pnlDietaConsigliata1;
 import CP.pannelli.pnlEserciziConsigliati;
 import CP.pannelli.pnlObbiettivo;
 import CP.pannelli.pnlHome;
-import CP.pannelli.pnlRegistrazione1;
-//  IMPORT DELLE ECCEZIONI
-// IMPORT LIBRERIE PER IMPLEMENTARE ActionListener
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 // IMPORT PER FILE SE CI SERVIRANNO
-import java.io.*;
 import javax.swing.ImageIcon;
 
 //  IMPORT GUI PER JOptionPane
@@ -84,7 +80,8 @@ public class ListenerHome implements ActionListener {
             case "Esercizi": {
 
                 esercizi.impostaModellino(immagine);
-                if (obbiettivo.getJ() == 0) {
+                int pesoDesiderato = obbiettivo.getJ(listener.getSesso());
+                if (pesoDesiderato == 0) {
                     JOptionPane.showMessageDialog(null, "inserire il peso desiderato", "Errore", JOptionPane.ERROR_MESSAGE);
                 }
                 if (listener.getSesso()) {
@@ -92,28 +89,33 @@ public class ListenerHome implements ActionListener {
                 } else {
                     immagine1 = new ImageIcon(getClass().getResource("/data/ModMaschi/m" + x + obbiettivo.getJ() + ".png"));
                 }
+                esercizi();
                 esercizi.impostaModellinoDesiderato(immagine1);
                 obbiettivo.setVisible(false);
                 esercizi.setVisible(true);
             }
             break;
+            case "Consiglia dieta": {
+
+                        dieta.impostaModellino(immagine);
+
+                        obbiettivo.setVisible(false);
+                        dieta.setVisible(true);
+                    }
+                    break;
             case "Conferma": {
                 //  CAPIRE A CHE PANNELLO MANDARE 
                 scelta = home.getScelta();
                 switch (scelta) {
-                    case "Esercizi consigliati": {
+                    case "Obbiettivi": {
 
                         // IMPOSTO LA LABEL E IL MODELLINO
-                        obbiettivo();
-
                         obbiettivo.impostaModellino(immagine);
                         home.setVisible(false);
                         obbiettivo.setVisible(true);
                     }
                     break;
                     case "Calcolatore fabbisogno calorico": {
-
-                        fabbisognoCalorico();
 
                         cFB.impostaModellino(immagine);
 
@@ -123,24 +125,13 @@ public class ListenerHome implements ActionListener {
                     break;
                     case "Calcolatore idratazione giornaliera": {
 
-                        idratazione();
-
                         idratazione.impostaModellino(immagine);
 
                         home.setVisible(false);
                         idratazione.setVisible(true);
                     }
                     break;
-                    case "Dieta consigliata": {
-
-                        dieta();
-
-                        dieta.impostaModellino(immagine);
-
-                        home.setVisible(false);
-                        dieta.setVisible(true);
-                    }
-                    break;
+                    
                 }
             }
             break;
@@ -164,54 +155,56 @@ public class ListenerHome implements ActionListener {
     // GESTIONE FEEDBACK (LABEL)
     private void esercizi() {
 
-        // COMANDO PER IMPOSTARE LA LABEL
-        // nome pnl.setLabel(" feedback ");
+        int pD = obbiettivo.getJ(listener.getSesso());
+        // METODO PER IMPOSTARE LA LABEL
+        String s = "Nessun esercizio disponibile ";
         switch (y) // PESO
         {
-            case 1: {
-                switch (x) // ALTEZZA
+            case 1:
+                switch (pD) // PESO DESIDERATO
                 {
-                    case 1: {
-
-                    }
-                    break;
-                    case 2: {
-
-                    }
-                    break;
-                    case 3: {
-
-                    }
-                    break;
+                    case 1:
+                        s = "<html>Camminata veloce<br>Nuoto leggero<br>Yoga</html>";
+                        break;
+                    case 2:
+                        s = "<html>Pilates<br>Stretching dinamico<br>Tai Chi</html>";
+                        break;
+                    case 3:
+                        s = "<html>Cyclette leggera<br>Acquagym<br>Ginnastica dolce</html>";
+                        break;
                 }
-            }
-            break;
-            case 2: {
+                break;
+            case 2:
+                switch (pD) // PESO DESIDERATO
+                {
+                    case 1:
+                        s = "<html>Corsa leggera<br>Salto con la corda<br>Addominali</html>";
+                        break;
+                    case 2:
+                        s = "<html>Circuit training<br>Squat<br>Affondi</html>";
+                        break;
+                    case 3:
+                        s = "<html>Nuoto<br>Ciclismo<br>Ellittica</html>";
+                        break;
+                }
+                break;
+            case 3:
+                switch (pD) // PESO DESIDERATO
+                {
+                    case 1:
+                        s = "<html>Pesi leggeri<br>Trazioni alla sbarra<br>Flessioni</html>";
+                        break;
+                    case 2:
+                        s = "<html>Sollevamento pesi<br>Deadlift<br>Bench press</html>";
+                        break;
+                    case 3:
+                        s = "<html>CrossFit<br>HIIT<br>Kettlebell</html>";
+                        break;
+                }
+                break;
 
-            }
-            break;
-            case 3: {
-
-            }
-            break;
         }
-
-    }
-
-    private void fabbisognoCalorico() {
-
-    }
-
-    private void idratazione() {
-
-    }
-
-    private void dieta() {
-
-    }
-
-    private void obbiettivo() {
-
+        esercizi.setLabelD(s);
     }
 
     private void calcolaFabbisognoCalorico() {

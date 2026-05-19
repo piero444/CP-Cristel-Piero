@@ -24,8 +24,16 @@ public class pnlEserciziConsigliati extends javax.swing.JPanel {
     }
     
     public void impostaModellinoDesiderato(ImageIcon immagine)
-    {
+    {            // ESTRAE L'IMMAGINE DALL'ICONA ORIGINALE, LA RIDIMENSIONA A 234X500 PIXEL  (PER MANTENERE LE PROPORZIONI)
+                // USANDO L'ALGORITMO SCALE_SMOOTH PER NON PERDERE QUALITÀ, E LA RACCHIUDE 
+                // IN UN NUOVO OGGETTO IMAGEICON ADATTO ALLA JLABEL.
+        immagine = new ImageIcon(immagine.getImage().getScaledInstance(234, 500, java.awt.Image.SCALE_SMOOTH));
         modellino1.setIcon(immagine);
+    }
+    
+    public void setLabelD(String s)
+    {
+        labelDinamica.setText(s);
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -40,8 +48,8 @@ public class pnlEserciziConsigliati extends javax.swing.JPanel {
         modellino = new javax.swing.JLabel();
         jPanel9 = new javax.swing.JPanel();
         jPanel22 = new javax.swing.JPanel();
+        labelDinamica = new javax.swing.JLabel();
         modellino1 = new javax.swing.JLabel();
-        labelDinamica = new javax.swing.JTextField();
 
         setMaximumSize(new java.awt.Dimension(1000, 800));
         setMinimumSize(new java.awt.Dimension(1000, 800));
@@ -98,7 +106,7 @@ public class pnlEserciziConsigliati extends javax.swing.JPanel {
         jPanel23.setPreferredSize(new java.awt.Dimension(400, 640));
         jPanel23.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 5, 0));
 
-        modellino.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        modellino.setForeground(new java.awt.Color(255, 255, 255));
         modellino.setMaximumSize(new java.awt.Dimension(300, 640));
         modellino.setMinimumSize(new java.awt.Dimension(300, 640));
         modellino.setName(""); // NOI18N
@@ -121,21 +129,24 @@ public class pnlEserciziConsigliati extends javax.swing.JPanel {
         jPanel22.setMaximumSize(new java.awt.Dimension(400, 640));
         jPanel22.setMinimumSize(new java.awt.Dimension(400, 640));
         jPanel22.setPreferredSize(new java.awt.Dimension(400, 640));
-        jPanel22.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 5, 0));
-
-        modellino1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        modellino1.setMaximumSize(new java.awt.Dimension(300, 640));
-        modellino1.setMinimumSize(new java.awt.Dimension(300, 640));
-        modellino1.setName(""); // NOI18N
-        modellino1.setPreferredSize(new java.awt.Dimension(300, 640));
-        jPanel22.add(modellino1);
+        jPanel22.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 5, 10));
 
         labelDinamica.setBackground(new java.awt.Color(191, 230, 249));
-        labelDinamica.setMaximumSize(new java.awt.Dimension(80, 200));
-        labelDinamica.setMinimumSize(new java.awt.Dimension(80, 200));
-        labelDinamica.setName(""); // NOI18N
-        labelDinamica.setPreferredSize(new java.awt.Dimension(80, 200));
+        labelDinamica.setFont(new java.awt.Font("Segoe Print", 0, 20)); // NOI18N
+        labelDinamica.setToolTipText("");
+        labelDinamica.setFocusable(false);
+        labelDinamica.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        labelDinamica.setMaximumSize(new java.awt.Dimension(300, 100));
+        labelDinamica.setMinimumSize(new java.awt.Dimension(300, 100));
+        labelDinamica.setOpaque(true);
+        labelDinamica.setPreferredSize(new java.awt.Dimension(300, 100));
         jPanel22.add(labelDinamica);
+
+        modellino1.setMaximumSize(new java.awt.Dimension(300, 500));
+        modellino1.setMinimumSize(new java.awt.Dimension(300, 500));
+        modellino1.setName(""); // NOI18N
+        modellino1.setPreferredSize(new java.awt.Dimension(300, 500));
+        jPanel22.add(modellino1);
 
         jPanel9.add(jPanel22);
 
@@ -178,7 +189,7 @@ public class pnlEserciziConsigliati extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
-    private javax.swing.JTextField labelDinamica;
+    private javax.swing.JLabel labelDinamica;
     private javax.swing.JLabel modellino;
     private javax.swing.JLabel modellino1;
     // End of variables declaration//GEN-END:variables

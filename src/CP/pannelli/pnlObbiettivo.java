@@ -18,7 +18,7 @@ public class pnlObbiettivo extends javax.swing.JPanel {
 
         AscoltatoreSpinner a1 = new AscoltatoreSpinner(spnPesoD);
         spnPesoD.addChangeListener(a1);
-        spnPesoD.addMouseListener(a1);
+        ((javax.swing.JSpinner.DefaultEditor) spnPesoD.getEditor()).getTextField().addMouseListener(a1);
     }
 
     //PREPARO L'ASCOLTATORE
@@ -43,6 +43,29 @@ public class pnlObbiettivo extends javax.swing.JPanel {
     public int getJ() {
         return j;
     }
+    public int getJ(boolean sesso) {
+        int peso = getPesoD();
+
+        if (sesso) {
+            if (peso < 50) {
+                j = 1;
+            } else if (peso <= 70) {
+                j = 2;
+            } else {
+                j = 3;
+            }
+        } else {
+            if (peso < 60) {
+                j = 1;
+            } else if (peso <= 80) {
+                j = 2;
+            } else {
+                j = 3;
+            }
+        }
+
+        return j;
+    }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -64,6 +87,7 @@ public class pnlObbiettivo extends javax.swing.JPanel {
         jPanel22 = new javax.swing.JPanel();
         modellino1 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(92, 209, 255));
         setMaximumSize(new java.awt.Dimension(1000, 800));
@@ -109,33 +133,13 @@ public class pnlObbiettivo extends javax.swing.JPanel {
         jPanel23.setMaximumSize(new java.awt.Dimension(400, 640));
         jPanel23.setMinimumSize(new java.awt.Dimension(400, 640));
         jPanel23.setPreferredSize(new java.awt.Dimension(400, 640));
+        jPanel23.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 5, 0));
 
-        modellino.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        modellino.setMaximumSize(new java.awt.Dimension(300, 640));
-        modellino.setMinimumSize(new java.awt.Dimension(300, 640));
+        modellino.setMaximumSize(new java.awt.Dimension(300, 637));
+        modellino.setMinimumSize(new java.awt.Dimension(300, 637));
         modellino.setName(""); // NOI18N
-        modellino.setPreferredSize(new java.awt.Dimension(300, 640));
-
-        javax.swing.GroupLayout jPanel23Layout = new javax.swing.GroupLayout(jPanel23);
-        jPanel23.setLayout(jPanel23Layout);
-        jPanel23Layout.setHorizontalGroup(
-            jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 398, Short.MAX_VALUE)
-            .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel23Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(modellino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        jPanel23Layout.setVerticalGroup(
-            jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 640, Short.MAX_VALUE)
-            .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel23Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(modellino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
+        modellino.setPreferredSize(new java.awt.Dimension(300, 637));
+        jPanel23.add(modellino);
 
         jPanel8.add(jPanel23);
 
@@ -149,10 +153,10 @@ public class pnlObbiettivo extends javax.swing.JPanel {
         jPanel9.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 5, 10));
 
         jPanel19.setBackground(new java.awt.Color(191, 230, 249));
-        jPanel19.setMaximumSize(new java.awt.Dimension(400, 150));
-        jPanel19.setMinimumSize(new java.awt.Dimension(400, 150));
-        jPanel19.setPreferredSize(new java.awt.Dimension(400, 150));
-        jPanel19.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 5, 10));
+        jPanel19.setMaximumSize(new java.awt.Dimension(400, 100));
+        jPanel19.setMinimumSize(new java.awt.Dimension(400, 100));
+        jPanel19.setPreferredSize(new java.awt.Dimension(400, 100));
+        jPanel19.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 5, 0));
 
         jPanel20.setBackground(new java.awt.Color(191, 230, 249));
         jPanel20.setForeground(new java.awt.Color(15, 76, 156));
@@ -193,16 +197,15 @@ public class pnlObbiettivo extends javax.swing.JPanel {
 
         jPanel22.setBackground(new java.awt.Color(255, 255, 255));
         jPanel22.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel22.setMaximumSize(new java.awt.Dimension(400, 450));
-        jPanel22.setMinimumSize(new java.awt.Dimension(400, 450));
-        jPanel22.setPreferredSize(new java.awt.Dimension(400, 450));
+        jPanel22.setMaximumSize(new java.awt.Dimension(400, 500));
+        jPanel22.setMinimumSize(new java.awt.Dimension(400, 500));
+        jPanel22.setPreferredSize(new java.awt.Dimension(400, 500));
         jPanel22.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 5, 0));
 
-        modellino1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        modellino1.setMaximumSize(new java.awt.Dimension(300, 485));
-        modellino1.setMinimumSize(new java.awt.Dimension(300, 485));
+        modellino1.setMaximumSize(new java.awt.Dimension(300, 497));
+        modellino1.setMinimumSize(new java.awt.Dimension(300, 497));
         modellino1.setName(""); // NOI18N
-        modellino1.setPreferredSize(new java.awt.Dimension(300, 485));
+        modellino1.setPreferredSize(new java.awt.Dimension(300, 497));
         jPanel22.add(modellino1);
 
         jPanel9.add(jPanel22);
@@ -222,6 +225,21 @@ public class pnlObbiettivo extends javax.swing.JPanel {
         });
         jPanel9.add(jButton3);
 
+        jButton5.setBackground(new java.awt.Color(15, 76, 156));
+        jButton5.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        jButton5.setForeground(new java.awt.Color(255, 255, 255));
+        jButton5.setText("Consiglia dieta");
+        jButton5.setActionCommand("Consiglia dieta");
+        jButton5.setMaximumSize(new java.awt.Dimension(200, 50));
+        jButton5.setMinimumSize(new java.awt.Dimension(200, 50));
+        jButton5.setPreferredSize(new java.awt.Dimension(200, 50));
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        jPanel9.add(jButton5);
+
         add(jPanel9);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -235,10 +253,16 @@ public class pnlObbiettivo extends javax.swing.JPanel {
         listenerHome.actionPerformed(evt);
     }//GEN-LAST:event_jButton4ActionPerformed
 
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+         //   CONSIGLIA DIETA
+        listenerHome.actionPerformed(evt);
+    }//GEN-LAST:event_jButton5ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel3;
@@ -286,7 +310,7 @@ public class pnlObbiettivo extends javax.swing.JPanel {
             javax.swing.SwingUtilities.invokeLater(() -> requestFocusInWindow());
         }
 
-        public void mousePressed(java.awt.event.MouseEvent e) {
+        public void mouseClicked(java.awt.event.MouseEvent e) {
             javax.swing.JSpinner.DefaultEditor editor
                     = (javax.swing.JSpinner.DefaultEditor) spinner.getEditor();
             editor.getTextField().setText("");
@@ -299,6 +323,10 @@ public class pnlObbiettivo extends javax.swing.JPanel {
             // CAMBIA MODELLINO MASCHILE
 
             immagine = new ImageIcon(getClass().getResource("/data/ModMaschi/m" + listener.getAltezza() + j + ".png"));
+            // ESTRAE L'IMMAGINE DALL'ICONA ORIGINALE, LA RIDIMENSIONA A 234X500 PIXEL  (PER MANTENERE LE PROPORZIONI)
+                // USANDO L'ALGORITMO SCALE_SMOOTH PER NON PERDERE QUALITÀ, E LA RACCHIUDE 
+                // IN UN NUOVO OGGETTO IMAGEICON ADATTO ALLA JLABEL.
+             immagine = new ImageIcon(immagine.getImage().getScaledInstance(234, 500, java.awt.Image.SCALE_SMOOTH));
             modellino1.setIcon(immagine);
 
         }
@@ -309,6 +337,10 @@ public class pnlObbiettivo extends javax.swing.JPanel {
 
             // CAMBIA MODELLINO FEMMINILE
             immagine = new ImageIcon(getClass().getResource("/data/ModFemmine/f" + listener.getAltezza() + j + ".png"));
+            // ESTRAE L'IMMAGINE DALL'ICONA ORIGINALE, LA RIDIMENSIONA A 234X500 PIXEL  (PER MANTENERE LE PROPORZIONI)
+                // USANDO L'ALGORITMO SCALE_SMOOTH PER NON PERDERE QUALITÀ, E LA RACCHIUDE 
+                // IN UN NUOVO OGGETTO IMAGEICON ADATTO ALLA JLABEL.
+             immagine = new ImageIcon(immagine.getImage().getScaledInstance(234, 500, java.awt.Image.SCALE_SMOOTH));
             modellino1.setIcon(immagine);
 
         }

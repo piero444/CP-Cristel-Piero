@@ -15,18 +15,16 @@ public class pnlCalcoloFabbisognoCalorico extends javax.swing.JPanel {
         initComponents();
     }
     
-    public void setLabel(String s)
-    {
-        labelDinamica.setText(s);
-    }
-    
     public void setFabbisogno(String s)
     {
         lFabbisogno.setText(s);
     }
     
     public void impostaModellino(ImageIcon immagine)
-    {
+    {           // ESTRAE L'IMMAGINE DALL'ICONA ORIGINALE, LA RIDIMENSIONA A 234X500 PIXEL  (PER MANTENERE LE PROPORZIONI)
+                // USANDO L'ALGORITMO SCALE_SMOOTH PER NON PERDERE QUALITÀ, E LA RACCHIUDE 
+                // IN UN NUOVO OGGETTO IMAGEICON ADATTO ALLA JLABEL.
+        immagine = new ImageIcon(immagine.getImage().getScaledInstance(234, 500, java.awt.Image.SCALE_SMOOTH));
         modellino.setIcon(immagine);
     }
 
@@ -49,9 +47,8 @@ public class pnlCalcoloFabbisognoCalorico extends javax.swing.JPanel {
         jPanel11 = new javax.swing.JPanel();
         jPanel17 = new javax.swing.JPanel();
         jButton3 = new javax.swing.JButton();
-        jPanel12 = new javax.swing.JPanel();
+        jPanel22 = new javax.swing.JPanel();
         modellino = new javax.swing.JLabel();
-        labelDinamica = new javax.swing.JTextField();
 
         jPanel3.setBackground(new java.awt.Color(92, 209, 255));
         jPanel3.setMaximumSize(new java.awt.Dimension(1000, 800));
@@ -169,27 +166,20 @@ public class pnlCalcoloFabbisognoCalorico extends javax.swing.JPanel {
 
         jPanel7.add(jPanel1);
 
-        jPanel12.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel12.setMaximumSize(new java.awt.Dimension(400, 640));
-        jPanel12.setMinimumSize(new java.awt.Dimension(400, 640));
-        jPanel12.setPreferredSize(new java.awt.Dimension(400, 640));
-        jPanel12.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 5, 0));
+        jPanel22.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel22.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel22.setMaximumSize(new java.awt.Dimension(400, 640));
+        jPanel22.setMinimumSize(new java.awt.Dimension(400, 640));
+        jPanel22.setPreferredSize(new java.awt.Dimension(400, 640));
+        jPanel22.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 5, 0));
 
-        modellino.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        modellino.setMaximumSize(new java.awt.Dimension(300, 640));
-        modellino.setMinimumSize(new java.awt.Dimension(300, 640));
+        modellino.setMaximumSize(new java.awt.Dimension(300, 637));
+        modellino.setMinimumSize(new java.awt.Dimension(300, 637));
         modellino.setName(""); // NOI18N
-        modellino.setPreferredSize(new java.awt.Dimension(300, 640));
-        jPanel12.add(modellino);
+        modellino.setPreferredSize(new java.awt.Dimension(300, 637));
+        jPanel22.add(modellino);
 
-        labelDinamica.setBackground(new java.awt.Color(191, 230, 249));
-        labelDinamica.setMaximumSize(new java.awt.Dimension(80, 200));
-        labelDinamica.setMinimumSize(new java.awt.Dimension(80, 200));
-        labelDinamica.setName(""); // NOI18N
-        labelDinamica.setPreferredSize(new java.awt.Dimension(80, 200));
-        jPanel12.add(labelDinamica);
-
-        jPanel7.add(jPanel12);
+        jPanel7.add(jPanel22);
 
         jPanel5.add(jPanel7);
 
@@ -237,9 +227,9 @@ public class pnlCalcoloFabbisognoCalorico extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
-    private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel17;
     private javax.swing.JPanel jPanel18;
+    private javax.swing.JPanel jPanel22;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
@@ -247,7 +237,6 @@ public class pnlCalcoloFabbisognoCalorico extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JLabel lFabbisogno;
-    private javax.swing.JTextField labelDinamica;
     private javax.swing.JLabel modellino;
     // End of variables declaration//GEN-END:variables
 }

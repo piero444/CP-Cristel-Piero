@@ -78,7 +78,7 @@
           </Properties>
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.DesignFlowLayout">
-            <Property name="verticalGap" type="int" value="50"/>
+            <Property name="verticalGap" type="int" value="25"/>
           </Layout>
           <SubComponents>
             <Component class="javax.swing.JLabel" name="jLabel3">
@@ -87,7 +87,7 @@
                   <Color blue="d4" green="d8" red="be" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="24" style="1"/>
+                  <Font name="Segoe UI" size="36" style="1"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Anteprima modellino"/>
               </Properties>
@@ -111,7 +111,7 @@
               </Properties>
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.DesignFlowLayout">
-                <Property name="verticalGap" type="int" value="70"/>
+                <Property name="verticalGap" type="int" value="60"/>
               </Layout>
               <SubComponents>
                 <Container class="javax.swing.JPanel" name="jPanel12">
@@ -362,20 +362,15 @@
               <SubComponents>
                 <Component class="javax.swing.JLabel" name="modellino">
                   <Properties>
-                    <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                      <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                        <LineBorder/>
-                      </Border>
-                    </Property>
                     <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                      <Dimension value="[300, 640]"/>
+                      <Dimension value="[300, 637]"/>
                     </Property>
                     <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                      <Dimension value="[300, 640]"/>
+                      <Dimension value="[300, 637]"/>
                     </Property>
                     <Property name="name" type="java.lang.String" value="" noResource="true"/>
                     <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-                      <Dimension value="[300, 640]"/>
+                      <Dimension value="[300, 637]"/>
                     </Property>
                   </Properties>
                 </Component>

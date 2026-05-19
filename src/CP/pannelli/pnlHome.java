@@ -33,9 +33,9 @@ public class pnlHome extends javax.swing.JPanel {
         } else if (jRadioButton2.isSelected()) {
             scelta="Calcolatore idratazione giornaliera";
         } else if (jRadioButton3.isSelected()) {
-            scelta="Dieta consigliata";
+            scelta="Obbiettivi";
         } else if (jRadioButton4.isSelected()) {
-            scelta="Esercizi consigliati";
+            scelta="Obbiettivi";
         } else {
             JOptionPane.showMessageDialog(null, "Selezionare almeno un opzione", "Errore", JOptionPane.ERROR_MESSAGE);
         }
@@ -104,9 +104,9 @@ public class pnlHome extends javax.swing.JPanel {
 
         jPanel5.setBackground(new java.awt.Color(247, 249, 249));
         jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel5.setMaximumSize(new java.awt.Dimension(400, 500));
-        jPanel5.setMinimumSize(new java.awt.Dimension(400, 500));
-        jPanel5.setPreferredSize(new java.awt.Dimension(400, 500));
+        jPanel5.setMaximumSize(new java.awt.Dimension(400, 510));
+        jPanel5.setMinimumSize(new java.awt.Dimension(400, 510));
+        jPanel5.setPreferredSize(new java.awt.Dimension(400, 510));
         jPanel5.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 5, 10));
 
         jPanel6.setBackground(new java.awt.Color(247, 249, 249));
@@ -115,7 +115,7 @@ public class pnlHome extends javax.swing.JPanel {
         jPanel6.setMinimumSize(new java.awt.Dimension(400, 500));
         jPanel6.setOpaque(false);
         jPanel6.setPreferredSize(new java.awt.Dimension(400, 500));
-        jPanel6.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 15, 30));
+        jPanel6.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 15, 32));
 
         jPanel12.setBackground(new java.awt.Color(15, 76, 156));
         jPanel12.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -212,11 +212,10 @@ public class pnlHome extends javax.swing.JPanel {
         jPanel4.setPreferredSize(new java.awt.Dimension(400, 640));
         jPanel4.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 5, 0));
 
-        modellino.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        modellino.setMaximumSize(new java.awt.Dimension(300, 640));
-        modellino.setMinimumSize(new java.awt.Dimension(300, 640));
+        modellino.setMaximumSize(new java.awt.Dimension(300, 637));
+        modellino.setMinimumSize(new java.awt.Dimension(300, 637));
         modellino.setName(""); // NOI18N
-        modellino.setPreferredSize(new java.awt.Dimension(300, 640));
+        modellino.setPreferredSize(new java.awt.Dimension(300, 637));
         jPanel4.add(modellino);
 
         jPanel8.add(jPanel4);
